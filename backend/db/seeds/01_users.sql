@@ -1,18 +1,38 @@
 INSERT INTO
-users(first_name, last_name, email, password)
+users(first_name, last_name, email, password, location, bio, type)
 VALUES
-    ('Mario', 'Bros', 'mario@nintendo.com', 'test'),
-    ('Luigi', 'Bros', 'luigi@nintendo.com', 'test'),
+    ('Mario', 
+    'Bros', 
+    'mario@nintendo.com', 
+    'test',
+    'Vancouver',
+    'Hello There !',
+    'creator'
+    ),
+    ('Luigi', 
+    'Bros', 
+    'luigi@nintendo.com', 
+    'test',
+    'Burnaby', 
+    'Hey There!', 
+    'contributer'
+    ),
     (
         'Princess',
         'Peach',
         'peach@nintendo.com',
-        'test'
+        'test',
+        'Port Moody',
+        'I am hungry',
+        'contributer'
     ),
     (
         'Princess',
         'Daisy',
         'daisy@nintendo.com',
-        'test'
+        'test',
+        'Surrey',
+        'hiiiiii',
+        'creator'
     ),
-    ('Donkey', 'Kong', 'donkey@nintendo.com', 'test');
+    ('Donkey', 'Kong', 'donkey@nintendo.com', 'test','Whistler','Helooo','contributer');
