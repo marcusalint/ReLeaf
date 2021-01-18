@@ -1,6 +1,21 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import useApplicationData from  './hooks/useApplicationData'
+import Home from './components/Home';
+import Navbar from "./components/Navbar";
+
+export default function App(props) {
+  return (
+    <div className="App" >
+      <Navbar/>
+      <h1> Releaf </h1>
+      <Home/>
+    </div >
+  );
+}
+
+// const useApplicationData = require("./hooks/useApplicationData")
+// import useApplicationData from "./hooks/useApplicationData"
 // function App() {
 //   return (
 //     <div className="App">
@@ -21,20 +36,20 @@ import useApplicationData from  './hooks/useApplicationData'
 //     </div>
 //   );
 // }
-
-const App = () => {
-  const {
-      state,
-      dispatch
-  } = useApplicationData;
-    const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li>
-)   );
-  return (<div className="App" >
-    <h1> Users </h1>
-    <ul> {userList} </ul>
-  </div >
-  );
-};
-
-
-export default App;
+// const App = () => {
+// //   const {
+// //       state,
+// //   } = useApplicationData;
+// //     const userList = state.users.map((user) => (<li key={user.id} > {user.first_name} {user.last_name} {user.email} </li>
+// // )   );
+//   return (
+//     <div className="App" >
+//       <h1> Releaf </h1>
+//       <Home/>
+//     </div >
+//   );
+//   // return (
+//   //   <h1>Hello</h1>
+//   // )
+// };
+// export default App;
