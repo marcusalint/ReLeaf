@@ -2,10 +2,12 @@
 import React from "react";
 import './App.css';
 import Home from './components/Home';
+import Navbar from "./components/Navbar";
 
 export default function App(props) {
   return (
     <div className="App" >
+      <Navbar/>
       <h1> Releaf </h1>
       <Home/>
     </div >
