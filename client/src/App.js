@@ -3,15 +3,30 @@ import React from "react";
 import './App.css';
 import Home from './components/Home';
 import Navbar from "./components/Navbar";
-import AllFundsList from "./components/AllFundsList";
+import Random from "./components/Random";
+import List from "./components/List";
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default function App(props) {
   return (
-    <div className="App" >
-      <Navbar/>
+    <Router>
+      <div className="App" >
       <h1> Releaf </h1>
-      <Home/>
-    </div >
+      </div >
+      <Navbar/>
+      <Switch>
+        <Route path="/home" exact component={Home} />
+        <Route path="/random" exact component={Random} />
+        <Route path="/list" exact component={List} />
+      </Switch>
+    </Router>
   );
 }
 

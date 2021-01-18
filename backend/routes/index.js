@@ -23,11 +23,12 @@
 //     router.get('/posts', (req, res) => {
 //         getUsersPosts()
 //             .then((usersPosts) => {
+//               console.log("you can connect")
 //                 const formattedPosts = getPostsByUsers(usersPosts);
 //                 res.json(formattedPosts);
 //             })
 //             .catch((err) => res.json({
-//                 error: err.message
+//                 error: console.log("failure to connect")
 //             }));
 //     });
 
@@ -64,7 +65,6 @@
 
 const express = require('express');
 const router  = express.Router();
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
     console.log("GET DEM POSTS")
@@ -81,3 +81,4 @@ module.exports = (db) => {
   });
   return router;
 };
+
