@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const PORT       = process.env.PORT || 8080;
 const ENV        = process.env.ENV || "development";
 const express    = require("express");
@@ -10,7 +12,10 @@ const morgan     = require('morgan');
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
+console.log(dbParams, process.env.PORT)
+
 const db = new Pool(dbParams);
+console.log("A string or something")
 db.connect();
 
 
