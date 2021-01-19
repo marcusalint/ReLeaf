@@ -4,29 +4,23 @@ import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
 import AllFundsListItem from './AllFundsListItem'
 import "./AllFundsList.css";
-
-const creator_profiles = [
-  {"id":1,
-  "title":"Hey! Come back here! You big-a monkey!",
-  "description":"In vel quam orci. Suspendisse potenti. Curabitur eget aliquam ex. Praesent ullamcorper scelerisque egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum viverra magna, ut gravida massa lacinia at. Fusce blandit quis lectus ac iaculis.",
-  "image":"https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  "amount_raised":4000,"total_goal":10000,
-  "total_goal_reached":false,
-  "user_id":1,
-  "created_at":"2021-01-19T01:27:57.641Z"},
-  {"id":2,
-    "title":"Money needed for earthquake victims",
-    "description":"In vel quam orci. Suspendisse potenti. Curabitur eget aliquam ex. Praesent ullamcorper scelerisque egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum viverra magna, ut gravida massa lacinia at. Fusce blandit quis lectus ac iaculis.",
-    "image":"https://images.pexels.com/photos/7390/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "amount_raised":10000,
-    "total_goal":10000,
-    "total_goal_reached":true,
-    "user_id":4,
-    "created_at":"2021-01-19T01:27:57.641Z"}
-]
+const axios = require("axios").default;
 
 export default function AllFundsList(props) {
-  // const [state, setState] = useState("")
+  const [state, setState] = useState({})
+
+  console.log("Yo testing the axios request for creator profiles")
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/posts')
+    .then((data) => {
+      console.log("Yellow", data.data.posts)
+      setState(data.data.posts)
+    })
+  },[]);
+
+  console.log(state)
+
   return (
     <section className="all__funds">
       <h1>All Funds Page</h1>
@@ -36,7 +30,7 @@ export default function AllFundsList(props) {
       </div>
       <ul className="all__funds--items">
         {/* <AllFundsListItem name="samantha"/> */}
-      {creator_profiles.map((profile) => {
+      {state.map((profile) => {
         return(
           <AllFundsListItem
           key={profile.id}
