@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Navbar from "./components/Navbar";
 import Random from "./components/Random";
 import List from "./components/List";
-
+import AllFundsList from "./components/AllFundsList";
 
 import {
   BrowserRouter as Router,
@@ -19,12 +19,14 @@ export default function App(props) {
     <Router>
       <div className="App" >
       <h1> Releaf </h1>
+      <h3>Whatever inside of it</h3>
       </div >
       <Navbar/>
       <Switch>
         <Route path="/home" exact component={Home} />
         <Route path="/random" exact component={Random} />
         <Route path="/list" exact component={List} />
+        <Route path="/all_funds" exact component={AllFundsList} />
       </Switch>
     </Router>
   );
