@@ -13,8 +13,10 @@
   align-items: stretch;
   align-content: stretch;
   transition: box-shadow .3s;
+
 }
-.fund__img {
+
+.fund--img {
   width: 100%;
   height: 100%;
   overflow: hidden;

@@ -3,11 +3,8 @@ import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
   return (
-    // <li>
-    //   {props.name}
-    // </li>
     <li className="fund" key={props.id} >
-      <img className="fund__img" 
+      <img className="fund--img" 
       src={props.image} 
       alt={props.title}/>
       <p>{props.location}</p>
