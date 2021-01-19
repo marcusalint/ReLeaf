@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default function AllFundsListItem(props) {
   return (
     <li className="fund" key={props.id} >

@@ -5,7 +5,9 @@ import Home from './components/Home';
 import Navbar from "./components/Navbar";
 import Random from "./components/Random";
 import List from "./components/List";
-
+import AllFundsList from "./components/AllFundsList";
+import CreateFunds from "./components/CreateFunds";
+import FormTest from "./components/FormTest";
 
 import {
   BrowserRouter as Router,
@@ -13,18 +15,23 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function App(props) {
   return (
     <Router>
       <div className="App" >
       <h1> Releaf </h1>
+      <h1> hello</h1>
       </div >
       <Navbar/>
       <Switch>
         <Route path="/home" exact component={Home} />
         <Route path="/random" exact component={Random} />
         <Route path="/list" exact component={List} />
+        <Route path="/all_funds" exact component={AllFundsList} />
+        <Route path="/create_funds" exact component={CreateFunds} />
+        <Route path="/formtest" exact component={FormTest} />
+        
       </Switch>
     </Router>
   );
