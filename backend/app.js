@@ -1,9 +1,9 @@
-const PORT       = process.env.PORT || 8080;
+const PORT       = process.env.PORT || 3000;
 const ENV        = process.env.ENV || "development";
 const express    = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors')
-
+require('dotenv').config();
 const app        = express();
 const morgan     = require('morgan');
 
@@ -22,8 +22,8 @@ app.use(morgan('dev'));
 
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.use(cors())
@@ -32,12 +32,12 @@ app.use(cors())
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const postsRoutes = require("./routes/index");
-
+const categoriesRoutes = require("./routes/categories");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/posts", postsRoutes(db));
-
+app.use("/api/categories", categoriesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
