@@ -17,7 +17,7 @@ class List extends Component {
 
   // Retrieves the list of items from the Express app
   getList = () => {
-    fetch('http://localhost:8080/api/users')
+    fetch('http://localhost:3000/api/users')
     .then(res => {
       console.log(res)
       return res.json()
