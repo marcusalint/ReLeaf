@@ -7,7 +7,6 @@ import Random from "./components/Random";
 import List from "./components/List";
 import AllFundsList from "./components/AllFundsList";
 import CreateFunds from "./components/CreateFunds";
-import FormTest from "./components/FormTest";
 
 import {
   BrowserRouter as Router,
@@ -30,7 +29,7 @@ export default function App(props) {
         <Route path="/list" exact component={List} />
         <Route path="/all_funds" exact component={AllFundsList} />
         <Route path="/create_funds" exact component={CreateFunds} />
-        <Route path="/formtest" exact component={FormTest} />
+       
         
       </Switch>
     </Router>

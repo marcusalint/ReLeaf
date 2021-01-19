@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
 import AllFundsListItem from './AllFundsListItem'
-import "./AllFundsListItem.css";
+import "./AllFundsList.css";
 const axios = require("axios").default;
+
 export default function AllFundsList(props) {
-  const [state, setState] = useState({})
+  const [state, setState] = useState([])
+
   console.log("Yo testing the axios request for creator profiles")
+  console.log(state)
+
   useEffect(() => {
     axios.get('http://localhost:3000/api/posts')
     .then((data) => {
@@ -15,16 +19,18 @@ export default function AllFundsList(props) {
       setState(data.data.posts)
     })
   },[]);
+
   console.log(state)
+
   return (
-    <section className="all__funds">
+    <section className="all-funds">
       <h1>All Funds Page</h1>
-      <div className="all__funds--searchbar">
-      <SearchIcon/>
-      <TextField/>
+      <div className="all-funds--searchbar">
+        <h2>Search for a Fund</h2>
+        <SearchIcon/>
+        <TextField/>
       </div>
-      <ul className="all__funds--items">
-        {/* <AllFundsListItem name="samantha"/> */}
+      <ul className="all-funds--items">
       {state.map((profile) => {
         return(
           <AllFundsListItem

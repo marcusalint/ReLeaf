@@ -1,0 +1,12 @@
+.all-funds--items{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex-flow: wrap;
+}
+
+.all-funds--searchbar{
+  display:flex;
+  justify-content: center;
+}
