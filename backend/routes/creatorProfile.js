@@ -1,0 +1,85 @@
+// const express = require('express');
+// const getPostsByUsers = require('../db/helpers/dataHelpers')
+// const router = express.Router();
+// // const {
+// //     getPostsByUsers
+// // } = require('./');
+
+// module.exports = ({
+//     getUsers,
+//     getUserByEmail,
+//     addUser,
+//     getUsersPosts
+// }) => {
+//     /* GET users listing. */
+//     router.get('/', (req, res) => {
+//         getUsers()
+//             .then((users) => res.json(users))
+//             .catch((err) => res.json({
+//                 error: err.message
+//             }));
+//     });
+
+//     router.get('/posts', (req, res) => {
+//         getUsersPosts()
+//             .then((usersPosts) => {
+//               console.log("you can connect")
+//                 const formattedPosts = getPostsByUsers(usersPosts);
+//                 res.json(formattedPosts);
+//             })
+//             .catch((err) => res.json({
+//                 error: console.log("failure to connect")
+//             }));
+//     });
+
+//     router.post('/', (req, res) => {
+
+//         const {
+//             first_name,
+//             last_name,
+//             email,
+//             password
+//         } = req.body;
+
+//         getUserByEmail(email)
+//             .then(user => {
+
+//                 if (user) {
+//                     res.json({
+//                         msg: 'Sorry, a user account with this email already exists'
+//                     });
+//                 } else {
+//                     return addUser(first_name, last_name, email, password)
+//                 }
+
+//             })
+//             .then(newUser => res.json(newUser))
+//             .catch(err => res.json({
+//                 error: err.message
+//             }));
+
+//     })
+
+//     return router;
+// };
+
+const express = require('express');
+const router  = express.Router();
+
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    console.log("GET DEM POSTS")
+    db.query(`SELECT * FROM creator_profile;`)
+    .then(data => {
+        const posts = data.rows;
+        res.json({ posts });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+  return router;
+};
+
