@@ -5,9 +5,10 @@ CREATE TABLE creator_profile(
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     image VARCHAR(255) NOT NULL,
-    amount_raised INT,
+    amount_raised INT DEFAULT 0,
     total_goal INT NOT NULL,
-    total_goal_reached BOOLEAN NOT NULL,
+    total_goal_reached BOOLEAN DEFAULT false,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
+    

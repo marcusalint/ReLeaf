@@ -31,13 +31,13 @@ app.use(cors())
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const postsRoutes = require("./routes/index");
 const categoriesRoutes = require("./routes/categories");
+const creatorProfile = require("./routes/creatorProfile")
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/posts", postsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
+app.use("/api/creatorProfile", creatorProfile(db));
 // Note: mount other resources here, using the same pattern above
 
 
