@@ -3,23 +3,23 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios'
 import {Form} from 'react-bootstrap';
 import {useState} from 'react';
-
+import "./Form.css";
 
 
 
 
 export default function FormComp() {
-  const [state,setState] = useState('')
-  
+  const [state,setState] = useState({title: '', 
+                                     description: '',
+                                     image: '',
+                                     total_goal: ''});
+  function changeHandler(e) {
+       setState({...state, [e.target.name]: e.target.value })
+  }
       function handleSubmit(e) {
       e.preventDefault();
-      console.log(e);
-      console.log(state)
-      const data = {name: state};
-      console.log(data);
-     
       axios
-        .post('http://localhost:3000/api/categories', {state})
+        .post('http://localhost:3000/api/creatorProfile', {state})
         .then(response => {
 
           console.log(response)
@@ -33,18 +33,24 @@ export default function FormComp() {
   
   
   return (
+    <div className="form-style-8">
     <form onSubmit ={handleSubmit}>
     
-      <Form.Label>Category</Form.Label>
-      <Form.Control type="text" placeholder="Enter new Category" onChange = {e => setState(e.target.value)} />
-      
-   
-  
+      <Form.Label>Title</Form.Label>
+      <Form.Control type="text" name="title" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Label>Description</Form.Label>
+      <Form.Control type="text" name="description" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Label>Image</Form.Label>
+      <Form.Control type="text" name="image" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Label>Total Goal</Form.Label>
+      <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" onChange = {changeHandler} />
+     
   
     <Button variant="primary" type="submit">
       Submit
     </Button>
   </form>
+  </div>
   );
   }
 
