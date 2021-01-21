@@ -5,8 +5,7 @@ module.exports = (db) => {
     console.log("Making the get request")
     db.query(`SELECT * FROM user_products`)
     .then(data => {
-        console.log("We are in the Users Products query!")
-        console.log(data, "this is the data that we are accessing") 
+       
         const user_products = data.rows;
         console.log(data.rows, 'this is the data from data.rows')
         res.json({ user_products });
@@ -22,8 +21,7 @@ module.exports = (db) => {
     console.log(id, 'This is the req params console log')
     db.query(`SELECT * FROM user_products WHERE user_id = ${id};`)
     .then(data => {
-        console.log("We are in the Users Products query!")
-        console.log(data, "this is the data that we are accessing") 
+       
         const user_products = data.rows;
         console.log(data.rows, 'this is the data from data.rows')
         res.json({ user_products });

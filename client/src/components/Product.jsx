@@ -21,11 +21,11 @@ const Product = ({product}) => {
             <Typography>
               {Product.product_title}
             </Typography>
-            <Typography>
+            <Typography >
               {Product.product_title}
             </Typography>
           </div>
-          <Typography> 
+          <Typography > 
           {product.description}
           </Typography>
           {/* <Typography variant="h8" color="testSecondary"> 
@@ -39,7 +39,7 @@ const Product = ({product}) => {
         </CardActions>
       </Card>
       <StripeCheckout 
-      stripeKey="pk_test_51I6hkfKOSKL0JejWWdM5Q7z0rI12q1tnP06rUIjlLFIAqciOHrwaDAwIxkHSgVrhRld9fUXrm8Hf3Fxbd3qJ4Syq002ujDH8Il"
+      stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
       token={handleToken}
       />
     </div>

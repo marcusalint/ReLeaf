@@ -18,6 +18,7 @@ export default function AllFundsList(props) {
   useEffect(() => {
     axios.get('http://localhost:3000/api/creatorProfile')
     .then((res) => {
+     
       setProfile(res.data.posts)
     })
   },[]);

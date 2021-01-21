@@ -37,3 +37,11 @@
   margin: 2rem 0;
 
 }
+
+img.sidebar--centered {
+  border-radius: 50%;
+  max-width: 75%;
+  max-height: 75%;
+  display: flex;
+  padding: 10%;
+}
