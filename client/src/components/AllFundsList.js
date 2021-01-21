@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import AllFundsListItem from './AllFundsListItem';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
+// import { TextField } from "@material-ui/core";
 const axios = require("axios").default;
 
 export default function AllFundsList(props) {
@@ -66,8 +67,11 @@ export default function AllFundsList(props) {
           <h4>Find a Fund</h4>
           <span>
             <SearchIcon className="magnify-glass"/>
+            {/* <TextField/> */}
             <TextField 
             className="textfield" 
+            id="outlined-basic"
+            variant="outlined"
             placeholder="Search by name or location" 
             onChange={event => {setSearchTerm(event.target.value)}}/>
           </span>
