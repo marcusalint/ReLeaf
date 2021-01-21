@@ -6,7 +6,14 @@
     "@chec/commerce.js": "^2.3.1",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+<<<<<<< HEAD
     "@material-ui/core": "^4.11.2",
+=======
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^5.0.0-alpha.23",
+>>>>>>> 75b3e690d238418f7580fc4ddb24040ddf4df572
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/styles": "^5.0.0-alpha.23",
@@ -16,7 +23,8 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
+    "gsap": "^3.6.0",
     "material-ui-icons": "^1.0.0-beta.36",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
@@ -25,7 +33,11 @@
     "react-hook-form": "^6.14.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+<<<<<<< HEAD
     "react-stripe-checkout": "^2.6.3",
+=======
+    "styled-components": "^5.2.1",
+>>>>>>> 75b3e690d238418f7580fc4ddb24040ddf4df572
     "web-vitals": "^0.2.4"
   },
   "scripts": {

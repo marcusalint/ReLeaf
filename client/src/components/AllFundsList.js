@@ -1,50 +1,95 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
-import AllFundsListItem from './AllFundsListItem'
+import AllFundsListItem from './AllFundsListItem';
+import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
 const axios = require("axios").default;
 
 export default function AllFundsList(props) {
-  const [state, setState] = useState([])
-
-  console.log("Yo testing the axios request for creator profiles")
-  console.log(state)
+  const [users, setUsers] = useState([]);
+  const [profiles, setProfile] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  let bannerAnimate = useRef(null);
+  let searchBarAnimate = useRef(null)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/posts')
-    .then((data) => {
-      console.log("Yellow", data.data.posts)
-      setState(data.data.posts)
+    axios.get('http://localhost:3000/api/creatorProfile')
+    .then((res) => {
+      console.log("Yellow", res.data.creatorProfile)
+      setState(res.data.creatorProfile)
     })
   },[]);
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/users')
+    .then((data) => {
+      setUsers(data.data.users)
+    })
+  },[]);
+  
+  useEffect(() => {
+    TweenMax.fromTo(bannerAnimate, 1.2, {opacity: 0}, {opacity: 0.9, ease: Power2.easeInOut})
+    TweenMax.fromTo(searchBarAnimate, 1, {opacity: 0}, {opacity: 0.7, ease: Power2.easeInOut, delay: 1})
+  }, [])
 
-  console.log(state)
+  const filterSearch = () => {
+    let results = [];
+    if (searchTerm === "") {
+      return profiles;
+    }
+    let userResults = users.filter((user) => {
+      if (user.first_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        let profileResults = profiles.filter((p) => {
+          return p.user_id === user.id;
+        })
+        results = [...results, ...profileResults];
+      }
+      if (user.location.toLowerCase().includes(searchTerm.toLowerCase())) {
+        let locationResults = profiles.filter((p) => {
+          return p.user_id === user.id;
+        })
+        results = [...results, ...locationResults];
+      }
+    })
+    return results;
+  }
 
-  return (
+  return ( users && //make sure users state is set before rendering
     <section className="all-funds">
-      <h1>All Funds Page</h1>
-      <div className="all-funds--searchbar">
-        <h2>Search for a Fund</h2>
-        <SearchIcon/>
-        <TextField/>
+      <header>
+        <div className="all-funds--banner">
+          <div className="all-funds--banner-img" ref={el => {bannerAnimate = el}}></div>
+        </div>
+      </header>
+      <div className="all-funds--searchbar" ref={el => {searchBarAnimate = el}}>
+        <div className="all-funds--searchbar-content">
+          <h4>Find a Fund</h4>
+          <span>
+            <SearchIcon className="magnify-glass"/>
+            <TextField 
+            className="textfield" 
+            placeholder="Search by name or location" 
+            onChange={event => {setSearchTerm(event.target.value)}}/>
+          </span>
+        </div>
       </div>
       <ul className="all-funds--items">
-      {state.map((profile) => {
-        return(
-          <AllFundsListItem
-          key={profile.id}
-          title={profile.title}
-          location={profile.location}
-          description={profile.description}
-          amount_raised={profile.amount_raised}
-          total_goal={profile.total_goal}
-          image={profile.image}
-          />
-        )
-      })}
-      </ul>
+        {
+        filterSearch().map((val,key) => {
+          return(
+            <AllFundsListItem
+            key={val.id}
+            title={val.title}
+            location={val.location}
+            description={val.description.substring(0,100)+"..."}
+            amount_raised={val.amount_raised}
+            total_goal={val.total_goal}
+            image={val.image}
+            />
+            )
+          })}
+        </ul>
     </section>
   );
 }
