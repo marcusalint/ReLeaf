@@ -37,11 +37,11 @@ export default function FormComp() {
     <form onSubmit ={handleSubmit}>
     
       <Form.Label>Title</Form.Label>
-      <Form.Control type="text" name="title" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Control type="text" name="title" placeholder="Enter a title" onChange = {changeHandler} />
       <Form.Label>Description</Form.Label>
-      <Form.Control type="text" name="description" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Control type="text" name="description" placeholder="Enter a Description" onChange = {changeHandler} />
       <Form.Label>Image</Form.Label>
-      <Form.Control type="text" name="image" placeholder="Enter new Category" onChange = {changeHandler} />
+      <Form.Control type="text" name="image" placeholder="Enter a Category" onChange = {changeHandler} />
       <Form.Label>Total Goal</Form.Label>
       <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" onChange = {changeHandler} />
      
