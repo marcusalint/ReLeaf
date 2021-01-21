@@ -13,10 +13,10 @@ export default function AllFundsList(props) {
   console.log(state)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/posts')
-    .then((data) => {
-      console.log("Yellow", data.data.posts)
-      setState(data.data.posts)
+    axios.get('http://localhost:3000/api/creatorProfile')
+    .then((res) => {
+      console.log("Yellow", res.data.creatorProfile)
+      setState(res.data.creatorProfile)
     })
   },[]);
 
