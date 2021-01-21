@@ -1,0 +1,13 @@
+.campaign-header {
+  background-color: #EEE;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  max-width: 25%;
+  text-align: center;
+}
+
+.profile-text {
+  text-align: center;
+}

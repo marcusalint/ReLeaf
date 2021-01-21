@@ -7,6 +7,7 @@ import Random from "./components/Random";
 import List from "./components/List";
 import AllFundsList from "./components/AllFundsList";
 import CreateFunds from "./components/CreateFunds";
+import CampaignPage from "./components/CampaignPage";
 
 import {
   BrowserRouter as Router,
@@ -19,8 +20,11 @@ export default function App(props) {
   return (
     <Router>
       <div className="App" >
+<<<<<<< HEAD
       
      
+=======
+>>>>>>> campaignPage
       </div >
       <Navbar/>
       <Switch>
@@ -29,6 +33,7 @@ export default function App(props) {
         <Route path="/list" exact component={List} />
         <Route path="/all_funds" exact component={AllFundsList} />
         <Route path="/create_funds" exact component={CreateFunds} />
+        <Route path="/campaign" exact component={CampaignPage} />
        
         
       </Switch>
