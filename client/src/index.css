@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Hammersmith One';
+  src: local('Hammersmith One'), url(./fonts/Hammersmith_One/HammersmithOne-Regular.ttf) format('truetype');
+}
