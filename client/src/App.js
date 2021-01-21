@@ -19,8 +19,6 @@ export default function App(props) {
   return (
     <Router>
       <div className="App" >
-      <h1> Releaf </h1>
-      <h1> hello</h1>
       </div >
       <Navbar/>
       <Switch>
