@@ -1,0 +1,62 @@
+.sidebar {
+  background-color: grey;
+  -webkit-box-shadow: 0px 4px 8px rgba(125, 152, 161, 0.5);
+          box-shadow: 0px 4px 8px rgba(125, 152, 161, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 18rem;
+  border-radius: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.sidebar--centered {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.sidebar__separator {
+  width: 90%;
+  margin: 0;
+  border: solid 1px;
+}
+
+.sidebar__menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sidebar__lhl {
+  margin-top: 2rem;
+}
+
+.schedule {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+img {
+  border-radius: 50%;
+  max-width: 75%;
+  max-height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10%;
+}
