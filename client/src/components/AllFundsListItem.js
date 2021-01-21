@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { TweenMax, Power2 } from "gsap";
+import ProgressBar from './progressbar/index'
 import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
@@ -29,7 +30,7 @@ export default function AllFundsListItem(props) {
           <strong>{props.title}</strong>
         </h5>
         <p>{props.description}</p>
-
+        <ProgressBar/>
         <span>
           <strong>{props.amount_raised}</strong> raised of {props.total_goal}
         </span>
