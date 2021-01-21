@@ -23,7 +23,6 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import './Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -35,7 +34,7 @@ class Home extends Component {
       <div >
 
         <div className="Img-Container">
-          <img className="image" alt="" src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/07/radar-se-os-natural-disaster-crop.jpg" />
+          <img className="Home-image" alt="" src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/07/radar-se-os-natural-disaster-crop.jpg" />
           <h1 className="create-profile">Create your Profile</h1>
           <Link to={'/create_funds'}>
             <button className="btn-profile">
@@ -43,7 +42,7 @@ class Home extends Component {
             </button>
           </Link>
 
-          <img className="image" alt="" src="https://thumbs.dreamstime.com/z/donate-money-to-charity-concept-vector-illustration-43788131.jpg" />
+          <img className="Home-image" alt="" src="https://thumbs.dreamstime.com/z/donate-money-to-charity-concept-vector-illustration-43788131.jpg" />
           <h1 className="contributor">I am here to Contribute</h1>
           <Link to={'/create_funds'}>
             <button className="btn-contributor">
