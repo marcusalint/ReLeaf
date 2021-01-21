@@ -33,12 +33,8 @@ app.use(cors())
 const usersRoutes = require("./routes/users");
 const categoriesRoutes = require("./routes/categories");
 const creatorProfile = require("./routes/creatorProfile");
-<<<<<<< HEAD
-const userProducts = require("./routes/userProducts")
-=======
 const userProducts = require("./routes/userProducts");
 
->>>>>>> campaignPage
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
