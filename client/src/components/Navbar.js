@@ -40,6 +40,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import './Navbar.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,10 +59,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            {/* <MenuIcon /> */}
+          <img className="logo" src="/images/plant.png"/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             Releaf
