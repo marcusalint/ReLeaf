@@ -39,7 +39,7 @@ const Product = ({product}) => {
         </CardActions>
       </Card>
       <StripeCheckout 
-      stripekey="pk_test_51I6hkfKOSKL0JejWWdM5Q7z0rI12q1tnP06rUIjlLFIAqciOHrwaDAwIxkHSgVrhRld9fUXrm8Hf3Fxbd3qJ4Syq002ujDH8Il"
+      stripeKey="pk_test_51I6hkfKOSKL0JejWWdM5Q7z0rI12q1tnP06rUIjlLFIAqciOHrwaDAwIxkHSgVrhRld9fUXrm8Hf3Fxbd3qJ4Syq002ujDH8Il"
       token={handleToken}
       />
     </div>
