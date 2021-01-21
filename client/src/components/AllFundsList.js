@@ -17,8 +17,8 @@ export default function AllFundsList(props) {
   useEffect(() => {
     axios.get('http://localhost:3000/api/creatorProfile')
     .then((res) => {
-      console.log("Yellow", res.data.creatorProfile)
-      setProfile(res.data.creatorProfile)
+     
+      setProfile(res.data.posts)
     })
   },[]);
   useEffect(() => {

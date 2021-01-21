@@ -18,14 +18,14 @@ const Product = ({product}) => {
         <CardMedia className={classes.media} image='' title={product.product_title}/>
         <CardContent>
           <div className={classes.cardcontent}>
-            <Typography variant="h8" gutterBottom>
+            <Typography>
               {Product.product_title}
             </Typography>
-            <Typography variant="h8">
+            <Typography >
               {Product.product_title}
             </Typography>
           </div>
-          <Typography variant="h8" color="testSecondary"> 
+          <Typography > 
           {product.description}
           </Typography>
           {/* <Typography variant="h8" color="testSecondary"> 
