@@ -59,22 +59,22 @@ class Home extends Component {
             <div className="content-wrap">
               <span className="Font-icon"><FontAwesomeIcon size="3x" icon={faQuestion} /></span>
               <div className="content">
-              <h4>What is Releaf Crowdfunding?</h4>
-              <p>Crowdfunding is a fundraising method that helps individuals raise money for any cause through an online donation page.</p></div>
-              </div>
+                <h4>What is Releaf Crowdfunding?</h4>
+                <p>Crowdfunding is a fundraising method that helps individuals raise money for any cause through an online donation page.</p></div>
+            </div>
             <div className="content-wrap">
               <span className="Font-icon"><FontAwesomeIcon size="3x" icon={faUsers} /></span>
               <div className="content">
-              <h4>What are the benefits of Releaf</h4>
-              <p>Releaf allows you to create your own campaign for raising a natural disaster fund for your friends and family. It also lets you contribute to other campaigns around the world</p></div>
-              </div>
+                <h4>What are the benefits of Releaf</h4>
+                <p>Releaf allows you to create your own campaign for raising a natural disaster fund for your friends and family. It also lets you contribute to other campaigns around the world</p></div>
+            </div>
             <div className="content-wrap">
               <span className="Font-icon"><FontAwesomeIcon size="3x" icon={faCogs} /></span>
               <div className="content">
-              <h4>How I begin?</h4>
-              <p>First, you’ll want to create your profile for campaign. To create your campaign, you simply set a fundraising goal, give a title and description, and upload an image. Your campaign page will be created</p>
+                <h4>How I begin?</h4>
+                <p>First, you’ll want to create your profile for campaign. To create your campaign, you simply set a fundraising goal, give a title and description, and upload an image. Your campaign page will be created</p>
               </div>
-              </div>
+            </div>
 
           </div>
           <div className="section-image">
