@@ -1,10 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { TweenMax, Power2 } from "gsap";
-<<<<<<< HEAD
 import ProgressBar from './progressbar/index'
-=======
-// import ProgressBar from './progressbar/index.js'
->>>>>>> stripeFeature
 import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
@@ -13,9 +9,9 @@ export default function AllFundsListItem(props) {
   useEffect(() => {
     TweenMax.fromTo(
       itemAnimate,
-      1,
+      1.2,
       { opacity: 0 },
-      { opacity: 1, ease: Power2.easeInOut, delay: 1 }
+      { opacity: 1, ease: Power2.easeInOut }
     );
   }, []);
 
@@ -39,15 +35,9 @@ export default function AllFundsListItem(props) {
           <strong>{props.title}</strong>
         </h5>
         <p>{props.description}</p>
-<<<<<<< HEAD
         <ProgressBar percentage={getPercentage(props)}/>
         <span className="fund--goal">
           <strong>${props.amount_raised.toLocaleString()} raised</strong> of ${props.total_goal.toLocaleString()}
-=======
-
-        <span>
-          <strong>{props.amount_raised}</strong> raised of {props.total_goal}
->>>>>>> stripeFeature
         </span>
       </div>
     </li>
