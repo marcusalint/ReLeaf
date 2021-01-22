@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { TweenMax, Power2 } from "gsap";
-//import ProgressBar from './progressbar/index.js'
+import ProgressBar from './progressbar/index'
 import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
@@ -14,6 +14,11 @@ export default function AllFundsListItem(props) {
       { opacity: 1, ease: Power2.easeInOut, delay: 1 }
     );
   }, []);
+
+  const getPercentage = function(props) {
+    const percent = (props.amount_raised/props.total_goal)*100;
+    return percent;
+  }
 
   return (
     <li
@@ -30,10 +35,9 @@ export default function AllFundsListItem(props) {
           <strong>{props.title}</strong>
         </h5>
         <p>{props.description}</p>
-
-        
-        <span>
-          <strong>{props.amount_raised}</strong> raised of {props.total_goal}
+        <ProgressBar percentage={getPercentage(props)}/>
+        <span className="fund--goal">
+          <strong>${props.amount_raised.toLocaleString()} raised</strong> of ${props.total_goal.toLocaleString()}
         </span>
       </div>
     </li>

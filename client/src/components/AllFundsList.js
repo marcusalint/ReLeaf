@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
@@ -67,8 +68,11 @@ export default function AllFundsList(props) {
           <h4>Find a Fund</h4>
           <span>
             <SearchIcon className="magnify-glass"/>
-            <input
+            {/* <TextField/> */}
+            <input 
             className="textfield" 
+            id="outlined-basic"
+            variant="outlined"
             placeholder="Search by name or location" 
             onChange={event => {setSearchTerm(event.target.value)}}>
             </input> 
@@ -79,15 +83,17 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <AllFundsListItem
-            key={val.id}
-            title={val.title}
-            location={val.location}
-            description={val.description.substring(0,100)+"..."}
-            amount_raised={val.amount_raised}
-            total_goal={val.total_goal}
-            image={val.image}
-            />
+            <Link to={'/home'} style={{ textDecoration: 'none' }}>
+              <AllFundsListItem
+              key={val.id}
+              title={val.title}
+              location={val.location}
+              description={val.description.substring(0,100)+"..."}
+              amount_raised={val.amount_raised}
+              total_goal={val.total_goal}
+              image={val.image}
+              />
+            </Link>
             )
           })}
         </ul>

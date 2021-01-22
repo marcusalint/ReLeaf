@@ -31,7 +31,7 @@ import { faQuestion, faCogs, faUsers } from '@fortawesome/free-solid-svg-icons';
 class Home extends Component {
   render() {
     return (
-      <div >
+      <div className="homepage">
 
         <div className="Img-Container">
           <img className="Home-image" alt="" src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/07/radar-se-os-natural-disaster-crop.jpg" />

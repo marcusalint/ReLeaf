@@ -41,7 +41,6 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/userProducts", userProducts(db));
 app.use("/api/creatorProfile", creatorProfile(db));
-app.use("/api/userProducts", userProducts(db));
 
 // Note: mount other resources here, using the same pattern above
 
