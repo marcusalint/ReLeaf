@@ -15,6 +15,11 @@ export default function AllFundsListItem(props) {
     );
   }, []);
 
+  const getPercentage = function(props) {
+    const percent = (props.amount_raised/props.total_goal)*100;
+    return percent;
+  }
+
   return (
     <li
       className="fund"
@@ -30,9 +35,9 @@ export default function AllFundsListItem(props) {
           <strong>{props.title}</strong>
         </h5>
         <p>{props.description}</p>
-        <ProgressBar/>
-        <span>
-          <strong>{props.amount_raised}</strong> raised of {props.total_goal}
+        <ProgressBar percentage={getPercentage(props)}/>
+        <span className="fund--goal">
+          <strong>${props.amount_raised.toLocaleString()} raised</strong> of ${props.total_goal.toLocaleString()}
         </span>
       </div>
     </li>
