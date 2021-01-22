@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
 import AllFundsListItem from './AllFundsListItem';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
-// import { TextField } from "@material-ui/core";
 const axios = require("axios").default;
 
 export default function AllFundsList(props) {
@@ -69,7 +69,7 @@ export default function AllFundsList(props) {
           <span>
             <SearchIcon className="magnify-glass"/>
             {/* <TextField/> */}
-            <TextField 
+            <input 
             className="textfield" 
             id="outlined-basic"
             variant="outlined"
@@ -82,15 +82,17 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <AllFundsListItem
-            key={val.id}
-            title={val.title}
-            location={val.location}
-            description={val.description.substring(0,100)+"..."}
-            amount_raised={val.amount_raised}
-            total_goal={val.total_goal}
-            image={val.image}
-            />
+            <Link to={'/home'} style={{ textDecoration: 'none' }}>
+              <AllFundsListItem
+              key={val.id}
+              title={val.title}
+              location={val.location}
+              description={val.description.substring(0,100)+"..."}
+              amount_raised={val.amount_raised}
+              total_goal={val.total_goal}
+              image={val.image}
+              />
+            </Link>
             )
           })}
         </ul>
