@@ -18,7 +18,7 @@ export default function AllFundsList(props) {
     axios.get('http://localhost:3000/api/creatorProfile')
     .then((res) => {
       console.log("Yellow", res.data.creatorProfile)
-      setState(res.data.creatorProfile)
+      setProfile(res.data.posts)
     })
   },[]);
   useEffect(() => {
