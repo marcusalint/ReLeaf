@@ -67,10 +67,11 @@ export default function AllFundsList(props) {
           <h4>Find a Fund</h4>
           <span>
             <SearchIcon className="magnify-glass"/>
-            <TextField 
+            <input
             className="textfield" 
             placeholder="Search by name or location" 
-            onChange={event => {setSearchTerm(event.target.value)}}/>
+            onChange={event => {setSearchTerm(event.target.value)}}>
+            </input> 
           </span>
         </div>
       </div>
