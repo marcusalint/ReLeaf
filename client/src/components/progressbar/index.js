@@ -18,9 +18,15 @@ const Thumb = styled.div`
   `;
 
 export default function ProgressBar (props) {
+
+  // Makes sure progress bar caps at 100% if amount raise is more than goal.
+  const clamp = function(min, value, max) {
+    return Math.min(Math.max(min, value), max);
+  }
+
   return(
     <Track>
-      <Thumb percentage={props.percentage}/>
+      <Thumb percentage={clamp(0, props.percentage, 100)}/>
     </Track>
   )
 }
