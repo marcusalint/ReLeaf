@@ -44,7 +44,7 @@ class Home extends Component {
 
           <img className="Home-image" alt="" src="https://image.freepik.com/free-photo/couple-holding-hands-grey-background_23-2148219108.jpg"/>
           <h1 className="contributor">I am here to Contribute</h1>
-          <Link to={'/create_funds'}>
+          <Link to={'/all_funds'}>
             <button className="btn-contributor">
               <span>Contribute</span><em></em>
             </button>
