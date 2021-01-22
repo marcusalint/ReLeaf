@@ -18,7 +18,9 @@
     "morgan": "~1.9.1",
     "pg": "^8.5.1",
     "pg-native": "^3.0.0",
-    "react-stripe-checkout": "^2.6.3"
+    "react-stripe-checkout": "^2.6.3",
+    "stripe": "^8.132.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
