@@ -40,10 +40,10 @@ const Product = ({product}) => {
         <CardContent>
           <div className={classes.cardcontent}>
             <Typography>
-              {Product.product_title}
+              {product.product_title}
             </Typography>
             <Typography >
-              {Product.product_title}
+              {product.product_title}
             </Typography>
           </div>
           <Typography > 
