@@ -24,9 +24,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faQuestion, faCogs, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Footer from './Footer';
+import { faQuestion, faCogs, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
   render() {
@@ -42,7 +42,7 @@ class Home extends Component {
             </button>
           </Link>
 
-          <img className="Home-image" alt="" src="https://thumbs.dreamstime.com/z/donate-money-to-charity-concept-vector-illustration-43788131.jpg" />
+          <img className="Home-image" alt="" src="https://image.freepik.com/free-photo/couple-holding-hands-grey-background_23-2148219108.jpg"/>
           <h1 className="contributor">I am here to Contribute</h1>
           <Link to={'/create_funds'}>
             <button className="btn-contributor">
@@ -83,6 +83,7 @@ class Home extends Component {
             </button>
           </div>
         </section>
+        <Footer />
       </div>
     );
   }
