@@ -18,11 +18,6 @@ export default function AllFundsList(props) {
   useEffect(() => {
     axios.get('http://localhost:3000/api/creatorProfile')
     .then((res) => {
-<<<<<<< HEAD
-     
-=======
-      console.log("Yellow", res.data.creatorProfile)
->>>>>>> stripeFeature
       setProfile(res.data.posts)
     })
   },[]);
@@ -87,7 +82,7 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <Link to={'/home'} style={{ textDecoration: 'none' }}>
+            <Link to={'/campaign'} style={{ textDecoration: 'none' }}>
               <AllFundsListItem
               key={val.id}
               title={val.title}
