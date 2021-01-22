@@ -7,6 +7,11 @@ require('dotenv').config();
 const app        = express();
 const morgan     = require('morgan');
 
+// Stripe setup 
+const stripe = require("stripe")("pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP");
+const { v4: uuidV4 } = require('uuid');
+
+
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -31,9 +36,12 @@ app.use(cors())
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
+const checkoutRoute = require("./routes/checkout");
 const categoriesRoutes = require("./routes/categories");
 const creatorProfile = require("./routes/creatorProfile");
 const userProducts = require("./routes/userProducts");
+
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -41,6 +49,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/userProducts", userProducts(db));
 app.use("/api/creatorProfile", creatorProfile(db));
+app.use("/api/checkout", checkoutRoute(db));
 
 // Note: mount other resources here, using the same pattern above
 

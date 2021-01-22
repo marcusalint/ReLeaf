@@ -18,7 +18,11 @@ export default function AllFundsList(props) {
   useEffect(() => {
     axios.get('http://localhost:3000/api/creatorProfile')
     .then((res) => {
+<<<<<<< HEAD
      
+=======
+      console.log("Yellow", res.data.creatorProfile)
+>>>>>>> stripeFeature
       setProfile(res.data.posts)
     })
   },[]);
