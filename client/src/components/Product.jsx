@@ -2,14 +2,35 @@ import React from 'react';
 import {Card, CardMedia, CardContent, CardActions, Typography, IconButton} from "@material-ui/core";
 import { AddShoppingCart} from "@material-ui/icons";
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios'
+import {toast} from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
+// import "./styles.css"
 
 import useStyles from './styles'
+
+toast.configure();
 
 const Product = ({product}) => {
   const classes = useStyles();
 
-  function handleToken(token, addresses) {
+  async function handleToken(token, addresses) {
     console.log(token, addresses)
+   const response = await axios.post("http://localhost:3000/api/checkout", {
+      token,
+      product
+    })
+    const {status} = response.data
+    console.log(response.data)
+    if (status === 'success') {
+      toast('Success! Check emails for details', 
+      {type: 'success'})
+      console.log('transaction was successful')
+    } else {
+      toast('Something went wrong', 
+      {type: 'error'})
+    }
   }
 
   return (
@@ -18,15 +39,20 @@ const Product = ({product}) => {
         <CardMedia className={classes.media} image='' title={product.product_title}/>
         <CardContent>
           <div className={classes.cardcontent}>
-            <Typography variant="h8" gutterBottom>
-              {Product.product_title}
+            <Typography>
+              {product.product_title}
+              {console.log(product.product_title)}
             </Typography>
-            <Typography variant="h8">
-              {Product.product_title}
+            <Typography>
+              {product.product_title}
             </Typography>
           </div>
-          <Typography variant="h8" color="testSecondary"> 
+          <Typography> 
           {product.description}
+          </Typography>
+          <Typography> 
+          {product.goal}
+          {console.log(product.goal)}
           </Typography>
           {/* <Typography variant="h8" color="testSecondary"> 
           {product}
@@ -39,8 +65,9 @@ const Product = ({product}) => {
         </CardActions>
       </Card>
       <StripeCheckout 
-      stripekey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
+      stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
       token={handleToken}
+      amount={product.goal*100}
       />
     </div>
 
