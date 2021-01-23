@@ -21,6 +21,7 @@ const Product = ({product}) => {
   const classes = useStyles();
   async function handleToken(token, addresses) {
     
+    // Payment Processing Gateway
    const response = await axios.post("http://localhost:3000/api/checkout", {
       token,
       product
