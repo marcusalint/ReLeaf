@@ -1,38 +1,57 @@
-import React from 'react';
+import React, { useState }from 'react';
 import {Card, CardMedia, CardContent, CardActions, Typography, IconButton} from "@material-ui/core";
 import { AddShoppingCart} from "@material-ui/icons";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios'
 import {toast} from 'react-toastify'
-
 import 'react-toastify/dist/ReactToastify.css'
 // import "./styles.css"
-
 import useStyles from './styles'
-
 toast.configure();
 
 const Product = ({product}) => {
+  const [product1, setProduct] = useState(
+    {
+      amount_reached: product.amount_reached
+    }
+  )
+  
+  let price_per_donation = (product.goal/product.donations_needed)
+  
   const classes = useStyles();
-
   async function handleToken(token, addresses) {
-    console.log(token, addresses)
+    
    const response = await axios.post("http://localhost:3000/api/checkout", {
       token,
       product
+    }, function() {
+      console.log(token, 'I can access the token material here')
     })
-    const {status} = response.data
-    console.log(response.data)
+    const {status, price} = response.data
+
     if (status === 'success') {
       toast('Success! Check emails for details', 
       {type: 'success'})
       console.log('transaction was successful')
+      
+      let a = JSON.parse(response.config.data)
+      let productObj = a.product;
+      
+      console.log(a.product, 'this is the product')
+      axios.post("http://localhost:3000/api/userProducts", { productObj })
+      .then(res => {
+        const amount = product1.amount_reached;
+        product1.amount_reached = amount + price_per_donation;
+        console.log(res.config.data, "This is the UPDATED value to set state")
+        setProduct((prev) => ({...prev, amount_reached: product1.amount_reached}) )
+        console.log()
+      })
+
     } else {
       toast('Something went wrong', 
       {type: 'error'})
     }
   }
-
   return (
     <div className="container">
       <Card className={classes.root}>
@@ -40,21 +59,15 @@ const Product = ({product}) => {
         <CardContent>
           <div className={classes.cardcontent}>
             <Typography>
-              {Product.product_title}
+              {product.product_title}
             </Typography>
             <Typography >
-              {Product.product_title}
+              {product.description}
             </Typography>
           </div>
-          <Typography > 
-          </Typography>
           <Typography> 
-          {product.goal}
-          {console.log(product.goal)}
+            {price_per_donation}
           </Typography>
-          {/* <Typography variant="h8" color="testSecondary"> 
-          {product}
-          </Typography> */}
         </CardContent>
         <CardActions disableSpacing className={classes.cardActions}>
           <IconButton aria-label="Add to Cart">
@@ -63,22 +76,24 @@ const Product = ({product}) => {
         </CardActions>
       </Card>
       <StripeCheckout 
-      stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
-      token={handleToken}
-      amount={product.goal*100}
+        stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
+        token={handleToken}
+        amount={price_per_donation*100}
       />
     </div>
-
-    // <div>
-    //   <h1>{Product.product_title}</h1>
-    //   <h1>{Product.goal}</h1>
-    //   <h1>{Product.description}</h1>
-    //   <h1>{Product.amount_reached}</h1>
-    //   <h1>{Product.user_id}</h1>
-    //   <h1>{Product.accomplished}</h1>
-    //   <h1>{Product.number_of_donations}</h1>
-    // </div>
   )
 }
-
 export default Product
+
+
+
+
+
+
+
+
+
+
+
+
+
