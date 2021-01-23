@@ -5,6 +5,7 @@ const stripe = require('stripe')('sk_test_51IBuSOAj9EPpC5TEKkqfZUeS1mDvOf4BOXFtM
 // const express = require('stripe');
 const { v4: uuidV4 } = require('uuid');
 
+// Checkout Endpoint Gives Back Payment Token on Payment Success
 module.exports = (db) => {
   router.post("/", async (req, res) => {
     console.log("Request:", req.body);
@@ -51,7 +52,7 @@ module.exports = (db) => {
       status = "failure";
       console.log(error)
     }
-
+    
     res.json({ error, status });
   });
   return router
