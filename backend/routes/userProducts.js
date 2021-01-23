@@ -33,6 +33,8 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  // Update Amount Raised for Product on Payment Success
   router.post("/", (req, res) => {
     const goal = req.body.productObj.goal;
     const donations_needed = req.body.productObj.donations_needed;
