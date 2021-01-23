@@ -1,10 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { TweenMax, Power2 } from "gsap";
-<<<<<<< HEAD
 import ProgressBar from './progressbar/index'
-=======
-// import ProgressBar from './progressbar/index.js'
->>>>>>> stripeFeature
 import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
@@ -39,15 +35,9 @@ export default function AllFundsListItem(props) {
           <strong>{props.title}</strong>
         </h5>
         <p>{props.description}</p>
-<<<<<<< HEAD
         <ProgressBar percentage={getPercentage(props)}/>
         <span className="fund--goal">
           <strong>${props.amount_raised.toLocaleString()} raised</strong> of ${props.total_goal.toLocaleString()}
-=======
-
-        <span>
-          <strong>{props.amount_raised}</strong> raised of {props.total_goal}
->>>>>>> stripeFeature
         </span>
       </div>
     </li>
