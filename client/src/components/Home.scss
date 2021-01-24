@@ -10,7 +10,9 @@ img.Home-image{
   height: 15px;
 }
 .Img-Container{
-  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 h6{
   text-align: center;
@@ -184,14 +186,14 @@ h6{
 
 .create-profile{
   position: absolute;
-  top: 20%;
+  top: 27%;
   font-weight: bold;
   right: 60%;
   color: white;
 }
 .contributor{
   position: absolute;
-  top: 20%;
+  top: 27%;
   left: 60%;
   color: black;
   font-weight: bold;
