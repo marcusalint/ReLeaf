@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+// AllFundsList's progress bar
 const Track = styled.div`
   width: 100%;
   height: 10px;
@@ -29,4 +30,7 @@ export default function ProgressBar (props) {
       <Thumb percentage={clamp(0, props.percentage, 100)}/>
     </Track>
   )
+}
+ProgressBar.propTypes = {
+  percentage: PropTypes.number,
 }
