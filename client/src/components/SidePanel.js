@@ -1,8 +1,6 @@
 import React from 'react'
 import "./SidePanel.scss";
 
-
-
 const SidePanel = () => {
   return (
     <main className="layout">
@@ -12,7 +10,7 @@ const SidePanel = () => {
           src="https://placeimg.com/640/640/people"
           alt="Interview Scheduler"
         />
-        <hr className="sidebar__separator sidebar--centered" />
+        
         <nav className="sidebar__menu">
 
         </nav>

@@ -6,7 +6,7 @@ import axios from 'axios'
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 // import "./styles.css"
-import useStyles from './styles'
+import useStyles from './styles' 
 toast.configure();
 
 const Product = ({product}) => {
@@ -21,6 +21,8 @@ const Product = ({product}) => {
   const classes = useStyles();
   async function handleToken(token, addresses) {
     console.log(token, addresses)
+
+   // Process Payment 
    const response = await axios.post("http://localhost:3000/api/checkout", {
       token,
       product
@@ -28,17 +30,23 @@ const Product = ({product}) => {
       console.log(token, 'I can access the token material here')
     })
     const {status, price} = response.data
-    // console.log(response.data, 'this is the response data')
-    // console.log(price, 'this is the price')
+    console.log(response.data, 'this is the response data')
+    console.log(price, 'this is the price')
+
+    // Check To See If the Payment Went Through
     if (status === 'success') {
-      toast('Success! Check emails for details', 
+      toast('Success! Check emails for details',
       {type: 'success'})
       console.log('transaction was successful')
-      // console.log(response)
+    // console.log(response)
       let a = JSON.parse(response.config.data)
       let productObj = a.product;
-      // console.log(a.token.id, 'this is a token')
+      console.log(a.token.id, 'this is a token')
       console.log(a.product, 'this is the product')
+
+      
+
+      // Update user_products Table After Payment Success
       axios.post("http://localhost:3000/api/userProducts", { productObj })
       .then(res => {
         const amount = product1.amount_reached;
@@ -47,14 +55,21 @@ const Product = ({product}) => {
         setProduct((prev) => ({...prev, amount_reached: product1.amount_reached}) )
         console.log()
       })
-      // if (a) {
-      //   this.setState({
-      //     token.id : a.token.id
-      //     // this class has your current state of your product object and we're setting product.product token id to the token id we just 
-      //   })
-      // }
+      
+      // Update creator_profile Table
+      axios.post("http://localhost:3000/api/creatorProfile" , {productObj})
+      .then(res => {
+        console.log(productObj, 'yeah man we are getting the right response line 47')
+      })
+      
+      // 
+      axios.post("http://localhost:3000/api/userProducts/updateTimestamp", {productObj})
+      .then(res => {
+        console.log('update timestamp route works so far')
+      }) 
+
     } else {
-      toast('Something went wrong', 
+      toast('Something went wrong',
       {type: 'error'})
     }
   }
@@ -72,13 +87,13 @@ const Product = ({product}) => {
               {product.product_title}
             </Typography>
           </div>
-          <Typography > 
+          <Typography >
           </Typography>
-          <Typography> 
+          <Typography>
           {price_per_donation}
           {console.log(price_per_donation)}
           </Typography>
-          {/* <Typography variant="h8" color="testSecondary"> 
+          {/* <Typography variant="h8" color="testSecondary">
           {product}
           </Typography> */}
         </CardContent>
@@ -88,7 +103,7 @@ const Product = ({product}) => {
           </IconButton>
         </CardActions>
       </Card>
-      <StripeCheckout 
+      <StripeCheckout
       stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
       token={handleToken}
       amount={price_per_donation*100}

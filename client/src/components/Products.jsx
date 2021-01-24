@@ -29,7 +29,7 @@ const Products = () => {
     <Grid container justify="center" spacing={4}> 
         {products.map((product) => {
           return (
-            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+            <Grid item key={product.id}>
             <Product product={product}/>
           </Grid>
           )
