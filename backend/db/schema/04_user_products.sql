@@ -12,8 +12,6 @@ CREATE TABLE user_products (
   image VARCHAR(255) NOT NULL,
   accomplished BOOLEAN NOT NULL,
   creator_profile_id INT REFERENCES creator_profile(id) on DELETE CASCADE,
-  number_of_donations INT NOT NULL
+  number_of_donations INT NOT NULL,
+  donations_needed INT
 )
-
-
-
