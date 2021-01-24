@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
-import TextField from '@material-ui/core/TextField';
 import AllFundsListItem from './AllFundsListItem';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
@@ -13,7 +12,7 @@ export default function AllFundsList(props) {
   const [profiles, setProfile] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   let bannerAnimate = useRef(null);
-  let searchBarAnimate = useRef(null)
+  let searchBarAnimate = useRef(null);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/creatorProfile')
@@ -31,7 +30,7 @@ export default function AllFundsList(props) {
   useEffect(() => {
     TweenMax.fromTo(bannerAnimate, 1.2, {opacity: 0}, {opacity: 0.9, ease: Power2.easeInOut})
     TweenMax.fromTo(searchBarAnimate, 1, {opacity: 0}, {opacity: 0.7, ease: Power2.easeInOut, delay: 1})
-  }, [])
+  }, []);
 
   const filterSearch = () => {
     let results = [];
@@ -67,7 +66,6 @@ export default function AllFundsList(props) {
           <h4>Find a Fund</h4>
           <span>
             <SearchIcon className="magnify-glass"/>
-            {/* <TextField/> */}
             <input 
             className="textfield" 
             id="outlined-basic"
@@ -78,6 +76,8 @@ export default function AllFundsList(props) {
           </span>
         </div>
       </div>
+      {searchTerm &&
+      <h4 className="search-results">Search Results for "{searchTerm}"</h4>}
       <ul className="all-funds--items">
         {
         filterSearch().map((val,key) => {
@@ -85,7 +85,7 @@ export default function AllFundsList(props) {
             <Link to={'/campaign'} style={{ textDecoration: 'none' }}>
               <AllFundsListItem
               key={val.id}
-              title={val.title}
+              title={val.title.substring(0,50)}
               location={val.location}
               description={val.description.substring(0,100)+"..."}
               amount_raised={val.amount_raised}
