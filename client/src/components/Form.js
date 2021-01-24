@@ -36,10 +36,12 @@ export default function FormComp() {
     <div className="form-style-8">
     <form onSubmit ={handleSubmit}>
     
-      <Form.Label>Title</Form.Label>
-      <Form.Control type="text" name="title" placeholder="Enter a title" onChange = {changeHandler} />
+      <Form.Label>Title of Campaign</Form.Label>
+      <Form.Control type="text" name="title" placeholder="Enter a Title" onChange = {changeHandler} />
       <Form.Label>Description</Form.Label>
-      <Form.Control type="text" name="description" placeholder="Enter a Description" onChange = {changeHandler} />
+      <Form.Control type="text" name="description" placeholder="Enter a Description" onChange = {changeHandler}
+      as="textarea" rows={3} size="sm"
+      />
       <Form.Label>Image</Form.Label>
       <Form.Control type="text" name="image" placeholder="Enter a Category" onChange = {changeHandler} />
       <Form.Label>Total Goal</Form.Label>
