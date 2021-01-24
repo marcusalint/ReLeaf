@@ -9,9 +9,9 @@ export default function AllFundsListItem(props) {
   useEffect(() => {
     TweenMax.fromTo(
       itemAnimate,
-      1,
+      1.2,
       { opacity: 0 },
-      { opacity: 1, ease: Power2.easeInOut, delay: 1 }
+      { opacity: 1, ease: Power2.easeInOut }
     );
   }, []);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+// AllFundsList's progress bar
 const Track = styled.div`
   width: 100%;
   height: 10px;
@@ -18,9 +19,18 @@ const Thumb = styled.div`
   `;
 
 export default function ProgressBar (props) {
+
+  // Makes sure progress bar caps at 100% if amount raise is more than goal.
+  const clamp = function(min, value, max) {
+    return Math.min(Math.max(min, value), max);
+  }
+
   return(
     <Track>
-      <Thumb percentage={props.percentage}/>
+      <Thumb percentage={clamp(0, props.percentage, 100)}/>
     </Track>
   )
+}
+ProgressBar.propTypes = {
+  percentage: PropTypes.number,
 }

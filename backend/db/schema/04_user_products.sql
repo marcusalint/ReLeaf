@@ -9,8 +9,8 @@ CREATE TABLE user_products (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   image VARCHAR(255) NOT NULL,
-  accomplished BOOLEAN NOT NULL,
+  accomplished BOOLEAN DEFAULT FALSE,
   creator_profile_id INT REFERENCES creator_profile(id) on DELETE CASCADE,
-  number_of_donations INT NOT NULL,
+  number_of_donations INT DEFAULT 0,
   donations_needed INT DEFAULT 10
 )

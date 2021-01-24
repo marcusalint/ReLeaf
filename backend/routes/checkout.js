@@ -14,7 +14,7 @@ module.exports = (db) => {
     let status;
     try {
       const { product, token } = req.body;
-      console.log(req.body, 'this is the req body')
+      // console.log(req.body, 'this is the req body')
       
       const customers = await stripe.customers.create({
         email: token.email,
