@@ -6,7 +6,6 @@ import AllFundsListItem from './AllFundsListItem';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
 const axios = require("axios").default;
-
 export default function AllFundsList(props) {
   const [users, setUsers] = useState([]);
   const [profiles, setProfile] = useState([]);
@@ -26,7 +25,6 @@ export default function AllFundsList(props) {
       setUsers(data.data.users)
     })
   },[]);
-  
   useEffect(() => {
     TweenMax.fromTo(bannerAnimate, 1.2, {opacity: 0}, {opacity: 0.9, ease: Power2.easeInOut})
     TweenMax.fromTo(searchBarAnimate, 1, {opacity: 0}, {opacity: 0.7, ease: Power2.easeInOut, delay: 1})
@@ -53,7 +51,6 @@ export default function AllFundsList(props) {
     })
     return results;
   }
-
   return ( users && //make sure users state is set before rendering
     <section className="all-funds">
       <header>

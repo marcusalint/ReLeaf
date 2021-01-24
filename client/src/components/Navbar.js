@@ -60,11 +60,10 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color="default">
+      <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            {/* <MenuIcon /> */}
-          <img className="logo" src="/images/plant.png"/>
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             <Link to={'/home'} style={{ textDecoration: 'none' }} className="link-home">

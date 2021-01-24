@@ -39,7 +39,10 @@ const usersRoutes = require("./routes/users");
 const checkoutRoute = require("./routes/checkout");
 const categoriesRoutes = require("./routes/categories");
 const creatorProfile = require("./routes/creatorProfile");
+const creatorProfileUpdate = require("./routes/creatorProfileUpdate");
 const userProducts = require("./routes/userProducts");
+const contributions = require("./routes/contributions");
+
 
 
 
@@ -49,7 +52,10 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/userProducts", userProducts(db));
 app.use("/api/creatorProfile", creatorProfile(db));
+app.use("/api/creatorProfileUpdate", creatorProfileUpdate(db));
 app.use("/api/checkout", checkoutRoute(db));
+app.use("/api/contributions", contributions(db));
+
 
 // Note: mount other resources here, using the same pattern above
 

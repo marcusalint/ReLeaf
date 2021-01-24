@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS user_products CASCADE;
-
 CREATE TABLE user_products (
    id SERIAL PRIMARY KEY NOT NULL,
   product_title VARCHAR(255) NOT NULL,

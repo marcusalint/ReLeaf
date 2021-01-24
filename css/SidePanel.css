@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: grey;
+  background-color: #eee;
   -webkit-box-shadow: 0px 4px 8px rgba(125, 152, 161, 0.5);
           box-shadow: 0px 4px 8px rgba(125, 152, 161, 0.5);
   display: -webkit-box;
@@ -9,7 +9,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 18rem;
+  max-width: 15em !important;
   border-radius: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -51,10 +51,10 @@
   margin: 2rem 0;
 }
 
-img {
+.sidebar--centered {
   border-radius: 50%;
-  max-width: 75%;
-  max-height: 75%;
+  max-width: 50%;
+  max-height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
