@@ -38,17 +38,16 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     const goal = req.body.productObj.goal;
     const donations_needed = req.body.productObj.donations_needed;
-    console.log(req.body.productObj, 'this is the productObj')
-    console.log(goal, 'this is the goal')
-    console.log(donations_needed, 'this is the donations_needed')
     const price_of_donation = goal/donations_needed;
-    console.log(price_of_donation, "userProducts.js price_of_donation")
     const amount_reached = req.body.productObj.amount_reached;
     const id = req.body.productObj.id;
     const number_of_donations = req.body.productObj.number_of_donations;
+    
     db.query(`UPDATE user_products SET amount_reached = ${amount_reached + price_of_donation}, number_of_donations = ${number_of_donations + 10} WHERE id = ${id}`)
     .then(data => {
+       
         const user_products = data.rows;
+      
         res.json({ user_products });
       })
       .catch(err => {

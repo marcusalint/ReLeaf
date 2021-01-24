@@ -10,7 +10,9 @@ export default function CampaignPage(props) {
   return (
     <div className="layout">
       <SidePanel />
+     
       <Products />
+     
     </div>
   )
 }
