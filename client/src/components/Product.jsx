@@ -37,14 +37,17 @@ const Product = ({product}) => {
     if (status === 'success') {
       toast('Success! Check emails for details',
       {type: 'success'})
-      console.log('transaction was successful')
+      
     // console.log(response)
       let a = JSON.parse(response.config.data)
       let productObj = a.product;
-      console.log(a.token.id, 'this is a token')
-      console.log(a.product, 'this is the product')
 
-      
+
+      // Posts to contributions table
+      // axios.post("http://localhost:3000/api/contributions", {productObj})
+      // .then(res => {
+      //   console.log(res, 'posting to contributions')
+      // }) 
 
       // Update user_products Table After Payment Success
       axios.post("http://localhost:3000/api/userProducts", { productObj })
@@ -62,11 +65,7 @@ const Product = ({product}) => {
         console.log(productObj, 'yeah man we are getting the right response line 47')
       })
       
-      // 
-      axios.post("http://localhost:3000/api/userProducts/updateTimestamp", {productObj})
-      .then(res => {
-        console.log('update timestamp route works so far')
-      }) 
+
 
     } else {
       toast('Something went wrong',
