@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS user_products CASCADE;
-
 CREATE TABLE user_products (
    id SERIAL PRIMARY KEY NOT NULL,
   product_title VARCHAR(255) NOT NULL,
@@ -13,5 +12,5 @@ CREATE TABLE user_products (
   accomplished BOOLEAN NOT NULL,
   creator_profile_id INT REFERENCES creator_profile(id) on DELETE CASCADE,
   number_of_donations INT NOT NULL,
-  donations_needed INT
+  donations_needed INT DEFAULT 10
 )
