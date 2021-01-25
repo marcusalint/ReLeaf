@@ -26,7 +26,7 @@ module.exports = (db) => {
     // Destructuring Assignment For ProductObj 
     const {id, product_title, goal, amount_reached, description, category_id, user_id, created_at, image, accomplished, creator_profile_id, number_of_donations, donations_needed} = productObj;
 
-    const price_of_donation = goal/donations_needed;
+    const price_of_donation = goal/10;
 
      db.query(`SELECT amount_raised FROM creator_profile WHERE user_id = ${user_id}`)
       .then(data => {
