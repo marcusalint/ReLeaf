@@ -38,12 +38,12 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     const goal = req.body.productObj.goal;
     const donations_needed = req.body.productObj.donations_needed;
-    const price_of_donation = goal/donations_needed;
+    const price_of_donation = goal/10;
     const amount_reached = req.body.productObj.amount_reached;
     const id = req.body.productObj.id;
     const number_of_donations = req.body.productObj.number_of_donations;
     
-    db.query(`UPDATE user_products SET amount_reached = ${amount_reached + price_of_donation}, number_of_donations = ${number_of_donations + 10} WHERE id = ${id}`)
+    db.query(`UPDATE user_products SET amount_reached = ${amount_reached + price_of_donation}, number_of_donations = ${number_of_donations + 1}, donations_needed = ${donations_needed - 1} WHERE id = ${id}`)
     .then(data => {
        
         const user_products = data.rows;
