@@ -15,6 +15,7 @@ const Footer = () => {
                     <ul>
                         <li><a href="#">Fundraising</a></li>
                         <li><a href="#">Contributing</a></li>
+                        <li><a href="#">Testimonials</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
@@ -23,10 +24,16 @@ const Footer = () => {
                         <li><a href="#">Company</a></li>
                         <li><a href="#">Team</a></li>
                         <li><a href="#">Careers</a></li>
+
+
                     </ul>
                 </div>
                 <div class="col-md-6 item text">
                     <h3>Releaf</h3>
+                    <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Help Centre</a></li>
+                    </ul>
                 </div>
                 <div class="col item social"><FontAwesomeIcon className="social-icon" size="2x" icon={faFacebookF} /><FontAwesomeIcon className="social-icon" size="2x" icon={faTwitter} /><FontAwesomeIcon className="social-icon" size="2x" icon={faSnapchatGhost} /><FontAwesomeIcon className="social-icon" size="2x" icon={faInstagram} /></div>
             </div>
