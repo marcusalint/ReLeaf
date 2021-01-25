@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import AllFundsListItem from './AllFundsListItem';
+import BackToTop from './BackToTop';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
 const axios = require("axios").default;
@@ -93,6 +94,7 @@ export default function AllFundsList(props) {
             )
           })}
         </ul>
+        <BackToTop showBelow={250}/>
     </section>
   );
 }
