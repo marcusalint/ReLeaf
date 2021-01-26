@@ -24,6 +24,7 @@ module.exports = (db) => {
   });
   router.get("/:id", (req, res) => {
     const id = req.params.id;
+    console.log("USER PRODUCTS ROUTE")
     db.query(`SELECT * FROM user_products WHERE user_id = ${id};`)
     .then(data => {
         const user_products = data.rows;
