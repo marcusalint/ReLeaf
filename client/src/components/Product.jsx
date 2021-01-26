@@ -60,6 +60,7 @@ const Product = ({product}) => {
       {type: 'error'})
     }
   }
+
   const getPercentage = function(props) {
     const percent = (product1.amount_reached/product.goal)*100;
     return percent;
