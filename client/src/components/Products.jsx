@@ -16,6 +16,7 @@ import axios from 'axios';
 
 const Products = () => {
   const [products, setProducts] = useState([])
+  
 
   useEffect(() => {
   axios.get('http://localhost:3000/api/userProducts/1')
@@ -24,10 +25,27 @@ const Products = () => {
   })
   },[]);
 
+  // Get the total funds need fo
+  const getGoal = function(products) {
+    let totalGoal = 0;
+    for (const product of products) {
+      totalGoal += product.goal;
+    }
+    return totalGoal
+  }
+
+  const totalFundsNeeded = getGoal(products)
+
+
+  
+
   return (
     <main>
     <Grid container justify="center" spacing={4}> 
         {products.map((product) => {
+        
+          
+
           return (
             <Grid item key={product.id}>
             <Product product={product}/>
