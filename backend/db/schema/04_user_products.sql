@@ -3,7 +3,7 @@ CREATE TABLE user_products (
    id SERIAL PRIMARY KEY NOT NULL,
   product_title VARCHAR(255) NOT NULL,
   goal INT NOT NULL,
-  amount_reached INT NOT NULL,
+  amount_reached INT DEFAULT 0,
   description TEXT NOT NULL,
   category_id INT REFERENCES categories(id) on DELETE CASCADE,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
