@@ -1,4 +1,4 @@
-INSERT INTO user_products(product_title, goal, amount_reached, description, category_id, user_id, image, accomplished, creator_profile_id, number_of_donations)
+INSERT INTO user_products(product_title, goal, amount_reached, description, category_id, user_id, image, accomplished, creator_profile_id, number_of_donations, donations_needed)
 VALUES
      ('Hygiene products for my family', 500, 0, 'This donation will help fund my family with toothpaste, soap, and feminine products. This will also help provide diapers and supplies for my newborn child.', 1, 1, 'https://www.flaticon.com/svg/vstatic/svg/2932/2932299.svg?token=exp=1611608101~hmac=43d6d7eb72ae40fb9cc14ebade6fe109', false, 1, 0, 10),
      ('Medical and hospital bills', 1000, 200, 'My cousin was injured and I need help covering for their medical expenses and physiotherpy during their recovery. Another member of my family takes a very expensive pharmaceutical that is only available from a remote part of the Costa Rican jungle. I need funding for that too,', 2, 1,'https://www.flaticon.com/svg/vstatic/svg/862/862032.svg?token=exp=1611607688~hmac=59a63644236a2e8abdfbe9e64dd44dcf', false,2,2,8),
