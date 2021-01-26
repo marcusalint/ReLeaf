@@ -64,6 +64,18 @@ const Product = ({product}) => {
     const percent = (product1.amount_reached/product.goal)*100;
     return percent;
   }
+
+  // const getTotalRaised = function() {
+  //   console.log()
+  //   let newArr = 0
+  //   const newProductArray= product1.map(element => element.amount_reached + newArr);
+  //   return newProductArray
+  // }
+
+  // console.log(getTotalRaised(), 'hello this is the total raised from all products');
+
+
+  // const totalRaised = getTotalRaised(product1)
   return (
     <div className="product--container">
       <Card className={classes.root}>
@@ -81,7 +93,7 @@ const Product = ({product}) => {
             </div>
             
             <Typography>
-              <span>{product1.donations_needed} x <strong className="text--bold">${price_per_donation}</strong></span>
+              <span>{product1.donations_needed} x <strong className="text--bold">${price_per_donation.toLocaleString()}</strong></span>
             </Typography>
           </div>
 

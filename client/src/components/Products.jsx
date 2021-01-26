@@ -4,6 +4,21 @@ import Product from './Product'
 //Pass in props 
 const Products = (props) => {
 
+  // Get the total funds need fo
+  const getGoal = function(products) {
+    let totalGoal = 0;
+    for (const product of products) {
+      totalGoal += product.goal;
+    }
+    return totalGoal
+  }
+
+
+  const totalFundsNeeded = getGoal(props.products)
+
+
+  
+
   return (
     <main>
     <Grid container justify="center" spacing={4}> 
