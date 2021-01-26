@@ -3,17 +3,7 @@ const router  = express.Router();
 
 
 module.exports = (db) => {
-  function queryPromise(query) {
-    return new Promise((resolve, reject) => {
-        con.query(query, (err, result) => {
-            if (err) {
-                return reject(err);
-            }
-
-            return resolve(result);
-        });
-    });
-}
+  
   // Updates The Total Amount of Money Raised 
   router.post("/",(req, res) => {
   
