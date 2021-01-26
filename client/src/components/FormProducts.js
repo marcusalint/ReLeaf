@@ -28,10 +28,10 @@ export default function FormProducts(props) {
   
     <Form.Label>Categories</Form.Label>
     <Form.Control name="categories" as="select" onChange = {changeHandler}>
-      <option>Medical</option>
-      <option>Hygiene</option>
-      <option>Clothing</option>
-      <option>Furniture</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      
     </Form.Control>
  
  

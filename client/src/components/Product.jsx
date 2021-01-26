@@ -67,8 +67,12 @@ const Product = ({product}) => {
 
   // const getTotalRaised = function() {
   //   console.log()
-  //   const newProductArray= product1.map(element => element.amount_reached);
+  //   let newArr = 0
+  //   const newProductArray= product1.map(element => element.amount_reached + newArr);
+  //   return newProductArray
   // }
+
+  // console.log(getTotalRaised(), 'hello this is the total raised from all products');
 
 
   // const totalRaised = getTotalRaised(product1)

@@ -7,3 +7,6 @@ VALUES
      ('Renovations on our home.', 40000, 8000, 'Skate ipsum dolor sit amet, alley oop vert mute-air Colby Carter flail 180 berm. Half-cab camel back ollie transition ledge Wes Humpston 1080. Carve casper switch kickturn late downhill. Hardware nosebone Rick McCrank bluntslide bigspin steps egg plant.', 5, 2, 'https://www.flaticon.com/svg/vstatic/svg/3030/3030650.svg?token=exp=1611626649~hmac=6992f5508c8072cbb7ef1d281d7a43cb', false, 1, 2, 8),
      ('Renovations on our home.', 50000, 20000, 'Skate ipsum dolor sit amet, alley oop vert mute-air Colby Carter flail 180 berm. Half-cab camel back ollie transition ledge Wes Humpston 1080. Carve casper switch kickturn late downhill. Hardware nosebone Rick McCrank bluntslide bigspin steps egg plant.', 5, 3, 'https://www.flaticon.com/svg/vstatic/svg/3030/3030650.svg?token=exp=1611626649~hmac=6992f5508c8072cbb7ef1d281d7a43cb', false, 1, 4, 6),
      ('Hygiene products for the family.', 12000, 6000, 'The first mate and his Skipper too will do their very best to make the others comfortable in their tropic island nest. Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless.', 1, 3, 'https://www.flaticon.com/svg/vstatic/svg/2932/2932299.svg?token=exp=1611608101~hmac=43d6d7eb72ae40fb9cc14ebade6fe109', false, 1, 5, 5)
+
+
+

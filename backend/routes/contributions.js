@@ -18,4 +18,5 @@ module.exports = (db) => {
     console.log('post route successfully working')
   })
   return router;
+
 };
