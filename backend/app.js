@@ -45,7 +45,6 @@ const contributions = require("./routes/contributions");
 
 
 
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -55,7 +54,6 @@ app.use("/api/creatorProfile", creatorProfile(db));
 app.use("/api/creatorProfileUpdate", creatorProfileUpdate(db));
 app.use("/api/checkout", checkoutRoute(db));
 app.use("/api/contributions", contributions(db));
-
 
 // Note: mount other resources here, using the same pattern above
 
