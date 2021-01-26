@@ -80,7 +80,12 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <Link to={'/campaign'} style={{ textDecoration: 'none' }}>
+            <Link to={{
+              pathname: '/campaign',
+              state: {
+                id: val.id
+              }
+            }}>
               <AllFundsListItem
               key={val.id}
               title={val.title.substring(0,50)}
