@@ -15,6 +15,7 @@ const Thumb = styled.div`
   height: 100%;
   background-color: #5E807F;
   border-radius: 6px;
+  transition: width 1s ease-in-out;
   //box-shadow: inset 0 0 5px #000;
   `;
 

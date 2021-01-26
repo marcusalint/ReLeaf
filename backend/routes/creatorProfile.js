@@ -3,7 +3,6 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log("GET DEM POSTS")
     db.query(`SELECT * FROM creator_profile;`)
     .then(data => {
         const posts = data.rows;
@@ -15,7 +14,22 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
+  router.get("/:id", (req, res) => {
+    console.log("CREATOR PROFILE ROUTE")
+    const id = req.params.id;
+    console.log(id,"This is the id");
+    db.query(`SELECT * FROM creator_profile WHERE user_id = ${id};`)
+    .then(data => {
+      console.log(data.data);
+        const posts = data.rows;
+        res.json({ posts });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
   // Updates The Total Amount of Money Raised 
   router.post("/", (req, res) => {
     console.log(req.body, 'this is the response back after hitting creatorProfile111')

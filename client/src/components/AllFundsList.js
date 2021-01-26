@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import AllFundsListItem from './AllFundsListItem';
+import BackToTop from './BackToTop';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
 const axios = require("axios").default;
@@ -79,7 +80,13 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <Link to={'/campaign'} style={{ textDecoration: 'none' }}>
+            <Link to={{
+              pathname: '/campaign',
+              state: {
+                id: val.id
+              }
+              
+            }} style={{textDecoration: 'none'}}>
               <AllFundsListItem
               key={val.id}
               title={val.title.substring(0,50)}
@@ -93,6 +100,7 @@ export default function AllFundsList(props) {
             )
           })}
         </ul>
+        <BackToTop showBelow={250}/>
     </section>
   );
 }
