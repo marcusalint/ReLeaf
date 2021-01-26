@@ -14,7 +14,7 @@ const Products = (props) => {
   }
 
 
-  const totalFundsNeeded = getGoal(products)
+  const totalFundsNeeded = getGoal(props.products)
 
 
   

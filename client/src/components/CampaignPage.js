@@ -24,11 +24,23 @@ export default function CampaignPage(props) {
       setProducts(data.data.user_products)
     })
   },[]);
-  
+
+  const getGoal = function(products) {
+    let totalGoal = 0;
+    for (const product of products) {
+      totalGoal += product.goal;
+    }
+    return totalGoal
+  }
+
+
+  const totalFundsNeeded = getGoal(products)
+
   return (
     <div className="layout">
       <BackToTop showBelow={250}/>
       <SidePanel profile={profile}/>
+      <p>{totalFundsNeeded}</p>
     
       <Products className="products" products={products}/>
 
