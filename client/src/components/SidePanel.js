@@ -10,7 +10,8 @@ const SidePanel = (props) => {
           src="https://placeimg.com/640/640/people"
           alt="Interview Scheduler"
         />
-        
+        <p>{props.goal}</p>
+        <p> {props.users[0].first_name}</p>
         <nav className="sidebar__menu">
 
         </nav>

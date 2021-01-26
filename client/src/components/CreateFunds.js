@@ -56,7 +56,7 @@ export default function CreateFundPage(props) {
 
  }
   return (
-    <div className="form-style-8">
+    <div className="form-style-5">
       <form >
     
         <Form.Label>Title</Form.Label>
@@ -84,14 +84,14 @@ export default function CreateFundPage(props) {
           </table>
         )
       })}
-      <Button onClick={(e) => setProductButton(true)}>Add Product</Button>
+      <button className="btn-add"onClick={(e) => setProductButton(true)}>Add Product</button>
       <Modal isOpen={productButton} onRequestClose={() => setProductButton(false)}>
         <FormProducts onSave={save}/>
-        <Button onClick={() =>setProductButton(false)}>Cancel</Button>
+        <button className="btn-cancel" onClick={() =>setProductButton(false)}>Cancel</button>
       </Modal>
-      <Button onClick ={handleSubmit} variant="primary" type="submit">
+      <button className='btn-save' onClick ={handleSubmit} variant="primary" type="submit">
           Save
-        </Button>
+        </button>
     </div>
   )
 }

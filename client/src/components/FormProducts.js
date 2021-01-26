@@ -22,7 +22,7 @@ export default function FormProducts(props) {
     setState({...state, [e.target.name]: e.target.value })
   }
     return (
-    <div className="form-style-8">  
+    <div className="form-style-5">  
       <form onSubmit ={handleSubmit} >
  
   
@@ -48,9 +48,9 @@ export default function FormProducts(props) {
   
 
   
-    <Button variant="primary" type="submit">
+    <button className="btn-save"variant="primary" type="submit">
       Save
-    </Button>
+    </button>
     </form>
    </div>
   );

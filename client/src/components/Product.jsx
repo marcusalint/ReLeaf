@@ -12,13 +12,8 @@ import useStyles from './styles'
 toast.configure();
 
 
-const Product = ({product}) => {
-  const [product1, setProduct] = useState(
-    {
-      amount_reached: product.amount_reached,
-      donations_needed: product.donations_needed
-    }
-  )
+const Product = ({product, updateProduct}) => {
+
   const classes = useStyles();
 
   const price_per_donation = (product.goal/10)
@@ -44,13 +39,8 @@ const Product = ({product}) => {
       // .then(res => {
       //   console.log(res, 'posting to contributions')
       // }) 
-      // Update user_products Table After Payment Success
-      axios.post("http://localhost:3000/api/userProducts", { productObj })
-      .then(res => {
-        const amount_reached = product1.amount_reached + price_per_donation;
-        const donations_needed = product1.donations_needed - 1; 
-        setProduct((prev) => ({...prev, amount_reached, donations_needed}) )
-      })
+      updateProduct(productObj)
+
       // Update creator_profile Table
       axios.post("http://localhost:3000/api/creatorProfile" , {productObj})
       .then(res => {
@@ -61,7 +51,7 @@ const Product = ({product}) => {
     }
   }
   const getPercentage = function(props) {
-    const percent = (product1.amount_reached/product.goal)*100;
+    const percent = (product.amount_reached/product.goal)*100;
     return percent;
   }
 
@@ -93,7 +83,7 @@ const Product = ({product}) => {
             </div>
             
             <Typography>
-              <span>{product1.donations_needed} x <strong className="text--bold">${price_per_donation.toLocaleString()}</strong></span>
+              <span>{product.donations_needed} x <strong className="text--bold">${price_per_donation.toLocaleString()}</strong></span>
             </Typography>
           </div>
 
@@ -101,7 +91,7 @@ const Product = ({product}) => {
             <div className="product--progress">
               <ProgressBar percentage={getPercentage()}/>
               <span className="fund--goal">
-                <strong>${product1.amount_reached.toLocaleString()} raised</strong> of ${product.goal.toLocaleString()} goal
+                <strong>${product.amount_reached.toLocaleString()} raised</strong> of ${product.goal.toLocaleString()} goal
               </span>
             </div>
           </Typography>
