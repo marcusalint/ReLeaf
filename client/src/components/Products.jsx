@@ -34,6 +34,7 @@ const Products = () => {
     return totalGoal
   }
 
+
   const totalFundsNeeded = getGoal(products)
 
 
