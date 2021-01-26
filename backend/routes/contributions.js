@@ -14,10 +14,6 @@ module.exports = (db) => {
         .json({error: err.message})
     })
   })
-<<<<<<< HEAD
-
-=======
->>>>>>> ff90daae2d4e8740605f60caad328eef53f272d9
   router.post("/", (req, res) => {
     console.log('post route successfully working')
   })
