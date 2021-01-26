@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Footer from './Footer';
+import BackToTop from './BackToTop';
 import { faQuestion, faCogs, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { TweenMax, Power2 } from 'gsap';
 
@@ -22,7 +23,7 @@ export default function Home(props) {
 
   return (
     <div className="homepage">
-
+      <BackToTop showBelow={250}/>
       <div className="Img-Container">
         <img className="Home-image" alt="" src="https://www.oreilly.com/radar/wp-content/uploads/sites/3/2019/07/radar-se-os-natural-disaster-crop.jpg" 
          ref={el => {leftImageAnimate = el}}/>
@@ -53,7 +54,7 @@ export default function Home(props) {
 
       <section className="description">
         <div className="section-description">
-          <h1>Releaf Crowdfunding</h1>
+          <h2>Releaf Crowdfunding</h2>
           <div className="content-wrap">
             <span className="Font-icon"><FontAwesomeIcon size="3x" icon={faQuestion} /></span>
             <div className="content">

@@ -1,3 +1,32 @@
-h1 {
-  color: red
+
+.product--container {
+  width: 50vw;
+  .product--text--container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    #product--text {
+      width: 70%;
+      height: 170px;
+      // background-color: red;
+      .product--description {
+        margin-top: 10px;
+      }
+      .product--title {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    }
+    .product--image {
+      width: 3em;
+      height: 3em;
+
+    }
+  .text--bold {
+    font-size: 40px;
+  }
+  }
+  .product--progress {
+    margin: 10px;
+  }
 }

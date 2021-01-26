@@ -2,4 +2,6 @@ INSERT INTO categories(name)
 VALUES
      ('Hygiene'),
      ('Medical'),
-     ('Clothing')
+     ('Clothing'),
+     ('Funeral'),
+     ('Housing')
