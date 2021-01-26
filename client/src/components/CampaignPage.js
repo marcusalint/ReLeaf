@@ -43,7 +43,7 @@ export default function CampaignPage(props) {
       <p>{totalFundsNeeded}</p>
     
       <Products className="products" products={products}/>
-
+      
     </div>
   )
 }
