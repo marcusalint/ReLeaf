@@ -82,7 +82,7 @@ const Product = ({product}) => {
             </div>
             
             <Typography>
-              <span>{product1.donations_needed} x <strong className="text--bold">${price_per_donation}</strong></span>
+              <span>{product1.donations_needed} x <strong className="text--bold">${price_per_donation.toLocaleString()}</strong></span>
             </Typography>
           </div>
 
