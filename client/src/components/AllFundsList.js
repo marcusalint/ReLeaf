@@ -79,17 +79,22 @@ export default function AllFundsList(props) {
         {
         filterSearch().map((val,key) => {
           return(
-            <Link to={'/campaign'} style={{ textDecoration: 'none' }}>
-              <AllFundsListItem
-              key={val.id}
-              title={val.title.substring(0,50)}
-              location={val.location}
-              description={val.description.substring(0,100)+"..."}
-              amount_raised={val.amount_raised}
-              total_goal={val.total_goal}
-              image={val.image}
-              />
-            </Link>
+             <Link to={{
+              pathname: '/campaign',
+              state: {
+                id: val.id
+              }
+            }}>
+            <AllFundsListItem
+            key={val.id}
+            title={val.title.substring(0,50)}
+            location={val.location}
+            description={val.description.substring(0,100)+"..."}
+            amount_raised={val.amount_raised}
+            total_goal={val.total_goal}
+            image={val.image}
+            />
+          </Link>
             )
           })}
         </ul>

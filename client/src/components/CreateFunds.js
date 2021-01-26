@@ -42,9 +42,10 @@ export default function CreateFundPage(props) {
     setState({...state, [e.target.name]: e.target.value })
 }
    function handleSubmit(e) {
+     
    e.preventDefault();
    axios
-     .post('http://localhost:3000/api/creatorProfile', {state})
+     .post('http://localhost:3000/api/creatorProfileUpdate', {state})
      .then(response => {
 
        console.log(response)
@@ -54,10 +55,9 @@ export default function CreateFundPage(props) {
      })
 
  }
-  console.log(state)
   return (
     <div className="form-style-8">
-      <form onSubmit ={handleSubmit}>
+      <form >
     
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} />
@@ -68,9 +68,7 @@ export default function CreateFundPage(props) {
         <Form.Label>Total Goal</Form.Label>
         <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" onChange = {changeHandler} />
 
-        <Button variant="primary" type="submit">
-          Save
-        </Button>
+       
 
       </form>
       {state.products.map(item =>  {
@@ -91,6 +89,9 @@ export default function CreateFundPage(props) {
         <FormProducts onSave={save}/>
         <Button onClick={() =>setProductButton(false)}>Cancel</Button>
       </Modal>
+      <Button onClick ={handleSubmit} variant="primary" type="submit">
+          Save
+        </Button>
     </div>
   )
 }
