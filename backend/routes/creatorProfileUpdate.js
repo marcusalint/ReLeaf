@@ -10,8 +10,9 @@ module.exports = (db) => {
     const queryParams = [req.body.state.profile_title,req.body.state.profile_description, req.body.state.image, req.body.state.total_goal,1];
     const queryString = "insert into creator_profile(title,description,image,total_goal,user_id) values($1,$2,$3,$4,$5) RETURNING id";
     return db.query(queryString,queryParams)
-    .then(data => {
-     const id = data.rows[0].id;
+    .then(data_profile => {
+    
+     const id = data_profile.rows[0].id;
      const products = req.body.state.products;
     function queryPromise(query) {
       return new Promise((resolve, reject) => {
@@ -35,7 +36,7 @@ module.exports = (db) => {
      )
      .then(data =>{
             console.log(data);
-            res.status(200).send(" ");
+            res.status(200).send(data_profile);
           })
           .catch(err => {
             console.log(err);
@@ -53,4 +54,3 @@ module.exports = (db) => {
   })
   return router;
 };
-
