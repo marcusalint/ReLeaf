@@ -8,6 +8,7 @@ import List from "./components/List";
 import AllFundsList from "./components/AllFundsList";
 import CreateFunds from "./components/CreateFunds";
 import CampaignPage from "./components/CampaignPage";
+import Login from "./components/Login";
 
 import {
   BrowserRouter as Router,
@@ -29,6 +30,7 @@ export default function App(props) {
         <Route path="/all_funds" exact component={AllFundsList} />
         <Route path="/create_funds" exact component={CreateFunds} />
         <Route path="/campaign" exact component={CampaignPage} />
+        <Route path="/login" exact component={Login} />
         
         
       </Switch>
