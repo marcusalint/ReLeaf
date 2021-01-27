@@ -14,7 +14,7 @@ export default function CampaignPage(props) {
     profile: [],
     users: []
   });
-
+  console.log(state.products.length, "What's the length?")
   const id = props.location.state.id; // {id: 3} creator_profile_id
   
   useEffect(() => {
@@ -23,28 +23,29 @@ export default function CampaignPage(props) {
       let profile = res.data.posts
       const temp = [...profile]
        setState((prev) => ({...prev, profile:temp}))
-       console.log(state);
+       console.log(profile, "PROFILE STATE SET");
     })
   },[]);
   useEffect(() => {
     axios.get(`http://localhost:3000/api/userProducts/${id}`)
     .then((data) => {
       let products = data.data.user_products
-      console.log(products)
+      // console.log(products)
      
       const temp = [...products]
       const goal = getGoal(temp);
        setState((prev) => ({...prev, products:temp, goal:goal}))
+       console.log(products, "PRODUCTS STATE SET")
     })
   },[]);
   useEffect(() => {
     axios.get(`http://localhost:3000/api/users/${id}`)
     .then((data) => {
       let users = data.data.users
-      console.log(users)
-    
+      
       const temp = [...users]
-       setState((prev) => ({...prev, users:temp}))
+      setState((prev) => ({...prev, users:temp}))
+      console.log(users, "USERS STATE SET")
     })
   },[]);
 
@@ -81,9 +82,12 @@ export default function CampaignPage(props) {
   return ( 
     <div className="layout">
       <BackToTop showBelow={250}/>
-  
-      <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/>
-      <Products className="products" products={state} updateProduct={updateProduct}/>
+      {state.profile.length > 0 && state.products.length > 0 && state.users.length >0 &&
+        <div>
+        <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/>
+        <Products className="products" products={state} updateProduct={updateProduct}/>
+        </div>
+      }
     </div>
   )
 }
