@@ -28,7 +28,7 @@ module.exports = (db) => {
   });
   router.get("/:id", (req, res) => {
     const id = req.params.id;
-    db.query(`SELECT * FROM users WHERE id = ${id};`)
+    db.query(`SELECT * FROM users JOIN creator_profile ON users.id = user_id WHERE creator_profile.id = ${id};`)
     .then(data => {
         const users = data.rows;
         res.json({ users });
