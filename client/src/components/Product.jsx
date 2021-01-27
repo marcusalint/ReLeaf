@@ -7,14 +7,13 @@ import {toast} from 'react-toastify';
 import ProgressBar from './progressbar/index.js';
 import 'react-toastify/dist/ReactToastify.css';
 import "./Product.scss";
-// import "./styles.css"
+
 import useStyles from './styles' 
 toast.configure();
 
 
 const Product = ({product, updateProduct}) => {
 
-  const classes = useStyles();
 
   const price_per_donation = (product.goal/10)
   async function handleToken(token, addresses) {
@@ -67,9 +66,27 @@ const Product = ({product, updateProduct}) => {
 
   // const totalRaised = getTotalRaised(product1)
   return (
-    <div className="product--container">
-      <Card className={classes.root}>
-        <CardMedia className={classes.media} image='' title={product.product_title}/>
+    <div className="Product--Container">
+      <div className="Card--Content">
+      <div class="Card--Left">
+        <h2 class="Product--Title">{product.product_title}</h2>
+        <p>{product.description}</p>
+        <p></p>
+      </div>
+      <div class="Card--Right">
+      </div>
+      </div>
+      <StripeCheckout
+      stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
+      token={handleToken}
+      amount={price_per_donation*100}
+      />
+    </div>
+  )
+}
+export default Product
+
+        {/* <CardMedia className={classes.media} image='' title={product.product_title}/>
         <CardContent>
           <div className="product--text--container">
             <img src={product.image} alt="" className="product--image"/>
@@ -100,14 +117,4 @@ const Product = ({product, updateProduct}) => {
           {/* <IconButton aria-label="Add to Cart">
             <AddShoppingCart />
           </IconButton> */}
-        </CardActions>
-      </Card>
-      <StripeCheckout
-      stripeKey="pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP"
-      token={handleToken}
-      amount={price_per_donation*100}
-      />
-    </div>
-  )
-}
-export default Product
+        
