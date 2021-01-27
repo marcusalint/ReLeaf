@@ -32,7 +32,6 @@ export default function App(props) {
         <Route path="/create_funds" exact component={CreateFunds} />
         <Route path="/campaign" exact component={CampaignPage} />
         
-        
       </Switch>
     </Router>
   );

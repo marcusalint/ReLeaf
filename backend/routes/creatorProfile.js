@@ -18,7 +18,7 @@ module.exports = (db) => {
     console.log("CREATOR PROFILE ROUTE")
     const id = req.params.id;
     console.log(id,"This is the id");
-    db.query(`SELECT * FROM creator_profile WHERE user_id = ${id};`)
+    db.query(`SELECT * FROM creator_profile WHERE id = ${id};`)
     .then(data => {
       console.log(data.data);
         const posts = data.rows;

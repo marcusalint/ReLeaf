@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { Redirect } from 'react-router-dom'
 
 import FormProducts from './FormProducts';
 import axios from 'axios';
@@ -7,14 +8,20 @@ import FormList from './FormList';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-modal';
 import "./Form.css";
+
+Modal.setAppElement('div')
+
 export default function CreateFundPage(props) {
   const [productButton, setProductButton] = useState(false);
+  const [redirect, setRedirect] = useState(false)
+  const [campaignId, setCampaignId] = useState(0)
   const [state, setState] = useState(
     { profile_title: "",
       profile_description: "",
       image: "",
       total_goal: "",
-      products :[]})
+      products :[]
+    })
 
   function save(stateReceived){
     const newCategories = stateReceived.categories;
@@ -31,44 +38,66 @@ export default function CreateFundPage(props) {
       temp.push(newProduct);
       console.log(temp);
     // setState({...state, categories:newCategories,product_title:newTitle,description:newDescription,price:newPrice}); 
-     
+    setProductButton(false)
     setState(prev => ({ ...prev, products: temp}));
     console.log(state)
-    setProductButton(false);
     
   }   
                                       
   function changeHandler(e) {
     setState({...state, [e.target.name]: e.target.value })
-}
+  }
+  useEffect(() => {
+    console.log('Do something after counter has changed', campaignId);
+    if(campaignId > 0){
+ setRedirect(true);
+    }
+   
+ }, [campaignId]);
+ 
    function handleSubmit(e) {
      
    e.preventDefault();
+
+  //  console.log(campaignId, "This is test");
+   
+  //  setProductButton(true, () => {console.log(productButton, "STATE OF PRODUCT BUTTON")});
+
    axios
      .post('http://localhost:3000/api/creatorProfileUpdate', {state})
      .then(response => {
-
-       console.log(response)
+      const id_value = response.data.rows[0].id;
+      // console.log(response.data.rows[0].id, "this is the id")
+      setCampaignId(id_value)
+      // console.log(campaignId, "INSIDE CAMPAIGN ID");
+      
+      //  if (redirect) {
+      //   return <Redirect to='/campaign' />;
+      // }
+     
+       
+     
      })
      .catch(error => {
        console.log(error)
      })
-
+console.log(campaignId, "OUTSIDE")
  }
   return (
-    <div className="form-style-8">
+    <div className="form-style-5">
       <form >
     
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} />
+        <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} 
+        defaultValue="If you haven't seen Game of Thrones, go watch it right now"/>
         <Form.Label>Description</Form.Label>
-        <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"/>
+        <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
+        defaultValue="Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor"/>
         <Form.Label>Image</Form.Label>
-        <Form.Control type="text" name="image" placeholder="Enter a Category" onChange = {changeHandler} />
+        <Form.Control type="text" name="image" defaultValue="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" placeholder="Enter a Category" onChange = {changeHandler} />
         <Form.Label>Total Goal</Form.Label>
-        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" onChange = {changeHandler} />
+        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" defaultValue="20000" onChange = {changeHandler} />
 
-       
 
       </form>
       {state.products.map(item =>  {
@@ -84,14 +113,20 @@ export default function CreateFundPage(props) {
           </table>
         )
       })}
-      <Button onClick={(e) => setProductButton(true)}>Add Product</Button>
+      <button className="btn-add"onClick={(e) => setProductButton(true)}>Add Product</button>
       <Modal isOpen={productButton} onRequestClose={() => setProductButton(false)}>
         <FormProducts onSave={save}/>
-        <Button onClick={() =>setProductButton(false)}>Cancel</Button>
+        <button className="btn-cancel" onClick={() =>setProductButton(false)}>Cancel</button>
       </Modal>
-      <Button onClick ={handleSubmit} variant="primary" type="submit">
+      <button className='btn-save' onClick ={handleSubmit} variant="primary" type="submit">
           Save
-        </Button>
+      </button>
+      { redirect && <Redirect to={{
+              pathname: '/campaign',
+              state: {
+                id: campaignId
+              }
+            }}/>}
     </div>
   )
 }
