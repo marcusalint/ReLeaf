@@ -1,0 +1,17 @@
+.Section--Two {
+  display: flex;
+  flex-direction: column;
+  // width: 50%;
+  margin-top: 3em;
+  
+}
+
+.Title {
+  text-decoration: underline;
+}
+
+.Description {
+  background-color: #EFE232;
+  max-width: 450px;
+  min-height: 150px;
+}
