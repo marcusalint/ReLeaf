@@ -27,15 +27,15 @@ module.exports = (db) => {
   }
      Promise.all(
        products.map((product) => {
-         console.log(product);
+         console.log(product, "products");
         return queryPromise(
-          `Insert into user_products (product_title,goal,description,category_id, user_id, image, creator_profile_id) values('${product.product_title}',${product.price}, '${product.description}',  ${product.categories},1,'image',${id});`
+          `Insert into user_products (product_title,goal,description,category_id, user_id, image, creator_profile_id) values('${product.product_title}',${product.price},'${product.description}', ${product.categories},1,'image',${id})`
           
-      );
+      )
        })
      )
      .then(data =>{
-            console.log(data);
+            console.log(data, "data");
             res.status(200).send(data_profile);
           })
           .catch(err => {
