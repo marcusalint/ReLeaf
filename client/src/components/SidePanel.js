@@ -2,9 +2,8 @@ import React from 'react'
 import "./SidePanel.scss";
 
 const SidePanel = (props) => {
-  const profile = [...props.profile];
-  console.log(profile,"Poop");
-  console.log(Object.keys(props.profile[0]));
+
+  console.log("PROPS - Side Panel", props);
   return (
     <main className="layout">
       <section className="sidebar">
@@ -14,8 +13,8 @@ const SidePanel = (props) => {
           alt="Interview Scheduler"
         />
         <p>{props.goal}</p>
-        {/* <p>{props.profile[0].title}</p>
-        <p>{props.profile[0].description}</p> */}
+        <p>{props.profile[0].title}</p>
+        <p>{props.profile[0].description}</p>
         <nav className="sidebar__menu">
 
         </nav>
