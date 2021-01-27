@@ -23,6 +23,7 @@ export default function CampaignPage(props) {
       let profile = res.data.posts
       const temp = [...profile]
        setState((prev) => ({...prev, profile:temp}))
+       console.log(state);
     })
   },[]);
   useEffect(() => {
@@ -75,12 +76,12 @@ export default function CampaignPage(props) {
     })
   }
 
-  console.log(state, "STATE");
-  console.log(state.goal, "GOAL")
+ 
 
-  return (
+  return ( 
     <div className="layout">
       <BackToTop showBelow={250}/>
+  
       <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/>
       <Products className="products" products={state} updateProduct={updateProduct}/>
     </div>
