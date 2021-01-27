@@ -9,6 +9,7 @@ import AllFundsList from "./components/AllFundsList";
 import CreateFunds from "./components/CreateFunds";
 import CampaignPage from "./components/CampaignPage";
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,7 @@ import {
   Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'simplebar/dist/simplebar.min.css';
 export default function App(props) {
   return (
     <Router>
