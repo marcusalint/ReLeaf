@@ -50,7 +50,6 @@ const contributions = require("./routes/contributions");
 const login = require("./routes/login");
 
 
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -62,10 +61,6 @@ app.use("/api/checkout", checkoutRoute(db));
 app.use("/api/contributions", contributions(db));
 app.use("/api/login", login(db));
 
-// Note: mount other resources here, using the same pattern above
-
-
-// Home page
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

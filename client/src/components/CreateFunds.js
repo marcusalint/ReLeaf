@@ -85,13 +85,15 @@ console.log(campaignId, "OUTSIDE")
       <form >
     
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} />
+        <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} 
+        defaultValue="If you haven't seen Game of Thrones, go watch it right now"/>
         <Form.Label>Description</Form.Label>
-        <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"/>
+        <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
+        defaultValue="Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor"/>
         <Form.Label>Image</Form.Label>
-        <Form.Control type="text" name="image" placeholder="Enter a Category" onChange = {changeHandler} />
+        <Form.Control type="text" name="image" defaultValue="This is a picture" placeholder="Enter a Category" onChange = {changeHandler} />
         <Form.Label>Total Goal</Form.Label>
-        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" onChange = {changeHandler} />
+        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" defaultValue="20000" onChange = {changeHandler} />
 
 
       </form>

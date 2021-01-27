@@ -6,7 +6,7 @@ module.exports = (db) => {
   
   // Updates The Total Amount of Money Raised 
   router.post("/",(req, res) => {
-  
+    console.log("POST ROUTE OF CREATORPROFILEUPDATE")
     const queryParams = [req.body.state.profile_title,req.body.state.profile_description, req.body.state.image, req.body.state.total_goal,1];
     const queryString = "insert into creator_profile(title,description,image,total_goal,user_id) values($1,$2,$3,$4,$5) RETURNING id";
     return db.query(queryString,queryParams)
@@ -29,7 +29,7 @@ module.exports = (db) => {
        products.map((product) => {
          console.log(product);
         return queryPromise(
-          `Insert into user_products (product_title,goal,amount_reached,description,category_id, user_id, image, creator_profile_id) values('${product.product_title}',${product.price},200, '${product.description}',  ${product.categories},1,'image',${id})`
+          `Insert into user_products (product_title,goal,description,category_id, user_id, image, creator_profile_id) values('${product.product_title}',${product.price}, '${product.description}',  ${product.categories},1,'image',${id});`
           
       );
        })

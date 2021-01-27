@@ -13,7 +13,7 @@ toast.configure();
 
 
 const Product = ({product, updateProduct}) => {
-
+  console.log(product.amount_reached, "AMOUNT REACHED IN PRODUCT.JSX")
   const classes = useStyles();
 
   const price_per_donation = (product.goal/10)
