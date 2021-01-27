@@ -7,7 +7,7 @@ const Products = (props) => {
   
   return (
     <main>
-    <Grid container justify="center" spacing={4}> 
+    <Grid container spacing={4}> 
         {state.map((product) => {
           return (
             <Grid item key={product.id}>
