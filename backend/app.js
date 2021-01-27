@@ -47,7 +47,6 @@ const creatorProfile = require("./routes/creatorProfile");
 const creatorProfileUpdate = require("./routes/creatorProfileUpdate");
 const userProducts = require("./routes/userProducts");
 const contributions = require("./routes/contributions");
-const login = require("./routes/login");
 
 
 // Mount all resource routes
@@ -59,7 +58,6 @@ app.use("/api/creatorProfile", creatorProfile(db));
 app.use("/api/creatorProfileUpdate", creatorProfileUpdate(db));
 app.use("/api/checkout", checkoutRoute(db));
 app.use("/api/contributions", contributions(db));
-app.use("/api/login", login(db));
 
 
 app.listen(PORT, () => {
