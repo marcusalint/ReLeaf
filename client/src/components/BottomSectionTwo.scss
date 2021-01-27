@@ -1,0 +1,27 @@
+.Bottom--Right--Container {
+  flex: 0 1 10%;
+  display: flex;
+  height: 100%;
+  max-width: 10%;
+  flex-direction: column;
+  align-items: center;
+  // margin-left: 4em;
+  
+  
+  
+  
+}
+
+.Right--Panel {
+  
+  background-color: #eee;
+  height:100%;
+  width:90%;
+  padding: 2em;
+  border-radius: 25px;
+  margin-bottom: 2em;
+  flex-direction: column;
+
+  
+  
+}
