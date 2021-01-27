@@ -4,6 +4,8 @@ import Products from './Products';
 import SidePanel from './SidePanel';
 import "./CampaignPage.scss";
 import axios from 'axios';
+import CampaignPageHead from './CampaignPageHead';
+import CampaignPageBottom from './CampaignPageBottom';
 
 
 export default function CampaignPage(props) {
@@ -80,9 +82,17 @@ export default function CampaignPage(props) {
 
   return (
     <div className="layout">
-      <BackToTop showBelow={250}/>
-      <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/>
-      <Products className="products" products={state} updateProduct={updateProduct}/>
+      <section>
+        <CampaignPageHead products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} />
+      </section>
+      <section>
+        <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal}/>
+      </section>
     </div>
   )
 }
+
+
+      {/* <BackToTop showBelow={250}/> */}
+      {/* <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/> */}
+      {/* <Products products={state} updateProduct={updateProduct}/> */}
