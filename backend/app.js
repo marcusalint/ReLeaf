@@ -6,6 +6,8 @@ const cors = require('cors')
 require('dotenv').config();
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
+const cookieParser = require("cookie-parser");
 
 // Stripe setup 
 const stripe = require("stripe")("pk_test_51IBuSOAj9EPpC5TEcXDX4CGoDapFJkSGFryFE06LaZOWzsBf9BBjJU22dAAmcswiJLFrNNdU9aGw2od6hfqNrkD5004yMieTFP");
@@ -18,7 +20,10 @@ const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
-
+app.use(cookieSession({
+  name: 'session',
+  keys: ['1','2']
+}));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -30,7 +35,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
-
+app.use(cookieParser());
 app.use(cors())
 
 // Separated Routes for each Resource
@@ -42,6 +47,7 @@ const creatorProfile = require("./routes/creatorProfile");
 const creatorProfileUpdate = require("./routes/creatorProfileUpdate");
 const userProducts = require("./routes/userProducts");
 const contributions = require("./routes/contributions");
+const login = require("./routes/login");
 
 
 
@@ -54,6 +60,7 @@ app.use("/api/creatorProfile", creatorProfile(db));
 app.use("/api/creatorProfileUpdate", creatorProfileUpdate(db));
 app.use("/api/checkout", checkoutRoute(db));
 app.use("/api/contributions", contributions(db));
+app.use("/api/login", login(db));
 
 // Note: mount other resources here, using the same pattern above
 
