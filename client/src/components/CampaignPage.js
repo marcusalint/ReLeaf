@@ -83,22 +83,19 @@ export default function CampaignPage(props) {
 
   return ( 
     <div className="layout">
-<<<<<<< HEAD
       <section>
         <CampaignPageHead products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} />
       </section>
       <section>
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal}/>
       </section>
-=======
-      <BackToTop showBelow={250}/>
+      {/* <BackToTop showBelow={250}/>
       {state.profile.length > 0 && state.products.length > 0 && state.users.length >0 &&
         <div>
         <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/>
         <Products className="products" products={state} updateProduct={updateProduct}/>
         </div>
-      }
->>>>>>> ab8de872c3ebab2c996e97c0b4e3887239a073ea
+      } */}
     </div>
   )
 }
