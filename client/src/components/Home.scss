@@ -15,6 +15,7 @@ img.Home-image{
   display: flex;
   flex-direction: row;
 }
+
 h6{
   text-align: center;
 }
@@ -189,9 +190,11 @@ h6{
 .create-profile{
   position: absolute;
   top: 27%;
-  font-weight: bold;
   right: 60%;
   color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', Arial, sans-serif;
 }
 .contributor{
   position: absolute;
@@ -199,6 +202,8 @@ h6{
   left: 60%;
   color: black;
   font-weight: bold;
+  text-transform: uppercase;
+  font-family:'Lucida Sans', Arial, sans-serif;
 }
 section.description{
   display: flex;
