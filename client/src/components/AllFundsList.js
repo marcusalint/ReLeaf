@@ -61,7 +61,7 @@ export default function AllFundsList(props) {
       </header>
       <div className="all-funds--searchbar" ref={el => {searchBarAnimate = el}}>
         <div className="all-funds--searchbar-content">
-          <h4>Find a Fund</h4>
+          <h4>Find a Campaign</h4>
           <span>
             <SearchIcon className="magnify-glass"/>
             <input 
