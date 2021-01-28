@@ -89,14 +89,14 @@ console.log(campaignId, "OUTSIDE")
     
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="profile_title" placeholder="Enter a title" as="input" onChange = {changeHandler} 
-        defaultValue="Forest fire destroyed my home"/>
+        defaultValue="Forest fire destroyed my home" autoComplete='off'/>
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
-        defaultValue="Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui"/>
+        defaultValue="Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui" autoComplete='off'/>
         <Form.Label>Image</Form.Label>
-        <Form.Control type="text" name="image" defaultValue="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" placeholder="Enter a Category" onChange = {changeHandler} />
+        <Form.Control type="text" name="image" defaultValue="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" placeholder="Enter a Category" onChange = {changeHandler} autoComplete='off'/>
         <Form.Label>Total Goal</Form.Label>
-        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" as="input" defaultValue="20000" onChange = {changeHandler} />
+        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" as="input" defaultValue="20000" onChange = {changeHandler} autoComplete='off'/>
 
 
       </form>
