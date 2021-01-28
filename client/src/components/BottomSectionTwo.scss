@@ -1,55 +1,62 @@
-.Bottom--Right--Container {
-  
-  display: block;
-  height: 100%;
-  max-width: 75%;
-  
-  // align-items: center;
-  // margin-left: 4em;
-  // margin-top: 300px;
+// .Bottom--Right--Container {
+//   display: block;
+//   height: 100%;
+//   max-width: 75%;
+//   // align-items: center;
+//   // margin-left: 4em;
+//   // margin-top: 300px;
+// }
+// .Right--Panel {
+//   // background-color: #eee;
+//   // height:100%;
+//   // width:90%;
+//   // padding: 2em;
+//   // border-radius: 25px;
+//   // margin-bottom: 2em;
+//   // flex-direction: column;
+// }
 
-  
-  
-}
-
-.Right--Panel {
-  
-  // background-color: #eee;
-  // height:100%;
-  // width:90%;
-  // padding: 2em;
-  // border-radius: 25px;
-  // margin-bottom: 2em;
-  // flex-direction: column;
-
-  
-  
-}
-
-.Card {
-  background-color: #EEE;
-  max-width: 400px;
-  max-height: 200px;
+.Side--Container {
+  width: 300px;
   display: flex;
-  flex-direction: row;
-  
-
-
-
+  flex-flow: wrap;
 }
-
+.news-article {
+  // max-width: 400px;
+  // max-height: 200px;
+  // background-color: blue;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+// .Card2{
+//   max-width: 100%;
+//   max-height: 100%;
+//  flex-direction: column;
+//   display: flex;
+//   padding: 10%;
+// }
+.Side--Container{
+  display: flex;
+  justify-content: space-between;
+}
 .News--Text {
-  font-size: 10px;
-  
+  font-size: 15px;
 }
-
-.News--Heading h1 {
-  font-size: 10px, !important;
-
-  
-}
-
 .News--Image {
-  max-height: 100px;
-  position: absolute;
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  // overflow: hidden;
+}
+.news-print {
+  background-color: #EEE;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.news-panel {
+  width: 100%;
+  height: 100%;
+  // background-color: red;
 }
