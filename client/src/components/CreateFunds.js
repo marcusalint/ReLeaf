@@ -8,6 +8,9 @@ import FormList from './FormList';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-modal';
 import "./Form.css";
+
+Modal.setAppElement('div')
+
 export default function CreateFundPage(props) {
   const [productButton, setProductButton] = useState(false);
   const [redirect, setRedirect] = useState(false)
@@ -91,7 +94,7 @@ console.log(campaignId, "OUTSIDE")
         <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
         defaultValue="Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor"/>
         <Form.Label>Image</Form.Label>
-        <Form.Control type="text" name="image" defaultValue="This is a picture" placeholder="Enter a Category" onChange = {changeHandler} />
+        <Form.Control type="text" name="image" defaultValue="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" placeholder="Enter a Category" onChange = {changeHandler} />
         <Form.Label>Total Goal</Form.Label>
         <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" defaultValue="20000" onChange = {changeHandler} />
 

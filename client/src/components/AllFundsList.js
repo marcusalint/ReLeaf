@@ -85,7 +85,7 @@ export default function AllFundsList(props) {
               state: {
                 id: val.id
               }
-            }}>
+            }} style={{textDecoration: 'none'}}>
             <AllFundsListItem
             key={val.id}
             title={val.title.substring(0,50)}

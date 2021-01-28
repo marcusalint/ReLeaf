@@ -1,0 +1,22 @@
+.Section--Two {
+  display: flex;
+  flex-direction: column;
+  // width: 50%;
+  margin-top: 1em;
+  
+}
+
+.Title {
+  
+  
+}
+
+.Description {
+  padding: 1em;
+  
+  color: black;
+  max-width: 450px;
+  min-height: 150px;
+  line-height: 2em;
+  border-radius: 25px;
+}

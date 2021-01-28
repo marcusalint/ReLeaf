@@ -5,10 +5,10 @@ import Home from './components/Home';
 import Navbar from "./components/Navbar";
 import Random from "./components/Random";
 import List from "./components/List";
-
 import AllFundsList from "./components/AllFundsList";
 import CreateFunds from "./components/CreateFunds";
 import CampaignPage from "./components/CampaignPage";
+
 
 import {
   BrowserRouter as Router,
@@ -17,6 +17,7 @@ import {
   Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'simplebar/dist/simplebar.min.css';
 export default function App(props) {
   return (
     <Router>
@@ -30,7 +31,6 @@ export default function App(props) {
         <Route path="/all_funds" exact component={AllFundsList} />
         <Route path="/create_funds" exact component={CreateFunds} />
         <Route path="/campaign" exact component={CampaignPage} />
-        
         
       </Switch>
     </Router>

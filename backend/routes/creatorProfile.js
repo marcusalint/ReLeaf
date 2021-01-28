@@ -32,8 +32,8 @@ module.exports = (db) => {
   });
   // Updates The Total Amount of Money Raised 
   router.post("/", (req, res) => {
-    console.log(req.body, 'this is the response back after hitting creatorProfile111')
-    console.log(Object.keys(req.body.productObj), 'these are the productObj keys')
+    // console.log(req.body, 'this is the response back after hitting creatorProfile111')
+    // console.log(Object.keys(req.body.productObj), 'these are the productObj keys')
 
     const productObj = req.body.productObj;
 
