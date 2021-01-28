@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 // AllFundsList's progress bar
 const Track = styled.div`
   width: 100%;
-  height: 10px;
+  height: 20px;
   background-color: #9DC5BB;
   border-radius: 10px;
+
   // box-shadow: inset 0 0 5px #000
   `;
 const Thumb = styled.div`
   width: ${props => props.percentage}%;
   height: 100%;
-  background-color: #5E807F;
+  background-color: #00ED98;
   border-radius: 6px;
   transition: width 1s ease-in-out;
   //box-shadow: inset 0 0 5px #000;
@@ -34,6 +35,7 @@ export default function ProgressBar (props) {
     </Track>
   )
 }
+
 ProgressBar.propTypes = {
   percentage: PropTypes.number,
 }
