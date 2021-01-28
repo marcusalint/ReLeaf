@@ -28,7 +28,7 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} id="navbar-color">
+    <div className={classes.root}>
       <AppBar position="fixed" color="800" style={{opacity: 0.7}}>
         <Toolbar className="toolbar">
 
