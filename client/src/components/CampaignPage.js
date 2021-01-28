@@ -6,11 +6,13 @@ import "./CampaignPage.scss";
 import axios from 'axios';
 import CampaignPageHead from './CampaignPageHead';
 import CampaignPageBottom from './CampaignPageBottom';
+import MainProgressBar from './MainProgressBar';
 
 
 export default function CampaignPage(props) {
 
   const [state, setState] = useState({
+    amount_reached: "0",
     goal: "0",
     products: [],
     profile: [],
@@ -36,7 +38,8 @@ export default function CampaignPage(props) {
      
       const temp = [...products]
       const goal = getGoal(temp);
-       setState((prev) => ({...prev, products:temp, goal:goal}))
+      const amount_reached = getAmountReached(temp)
+       setState((prev) => ({...prev, products:temp, goal:goal, amount_reached: amount_reached}))
        console.log(products, "PRODUCTS STATE SET")
     })
   },[]);
@@ -59,8 +62,19 @@ export default function CampaignPage(props) {
     }
     return totalGoal;
   }
-  const updateProduct = (productObj) => {
+  const getAmountReached = function(products) {
+    let totalAmountReached = 0;
+    for (const product of products) {
+      totalAmountReached += product.amount_reached;
+    }
+    return totalAmountReached;
+  }
+  const getPercentage = function(props) {
+    const percent = (state.amount_reached/state.goal)*100;
+    return percent;
+  }
 
+  const updateProduct = (productObj) => {
     axios.post("http://localhost:3000/api/userProducts", {productObj} )
     .then(res => {
       console.log(res, "RESPONSE FROM POST TO USERPRODUCTS")
@@ -74,7 +88,8 @@ export default function CampaignPage(props) {
       state.products[i] = productObj
       const temp = [...state.products]
       const newGoal = state.goal + price_per_donation;
-      setState((prev)=>({...prev, products:temp, goal:newGoal}))
+      const newAmountReached = state.amount_reached + price_per_donation;
+      setState((prev)=>({...prev, products:temp, goal:newGoal, amount_reached:newAmountReached}))
       // setState((prev) => ({...prev, amount_reached, donations_needed}) )
     })
   }
@@ -85,6 +100,7 @@ export default function CampaignPage(props) {
     <div className="layout">
       <section>
         <CampaignPageHead products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} />
+
       </section>
       <section>
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal}/>
@@ -96,6 +112,7 @@ export default function CampaignPage(props) {
         <Products className="products" products={state} updateProduct={updateProduct}/>
         </div>
       } */}
+      <MainProgressBar percentage={getPercentage(props)}/>
     </div>
   )
 }
