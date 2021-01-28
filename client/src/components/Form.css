@@ -132,3 +132,11 @@
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
+.list-item{
+	border: 3px solid #1abc9c;
+ max-width:419px;
+	text-align: center;	
+  margin-right: 10px;
+	list-style: none;
+	word-wrap: break-word;
+}
