@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  toolbarButtons: {
+    marginLeft: 'auto',
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -27,16 +30,23 @@ export default function ButtonAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="fixed" color="800" style={{opacity: 0.7}}>
-        <Toolbar>
+        <Toolbar className="toolbar">
+
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <img src="/images/plant.png" className="logo"/>
           </IconButton>
+
+          <Button color="inherit">My Campaign</Button>
+          <Button color="inherit" href="/all_funds">Search Campaign</Button>
+
           <Typography variant="h6" className={classes.title}>
             <Link to={'/home'} style={{ textDecoration: 'none' }} className="link-home">
               Releaf
             </Link>
           </Typography>
+
           <Button color="inherit">Logout</Button>
+
         </Toolbar>
       </AppBar>
     </div>

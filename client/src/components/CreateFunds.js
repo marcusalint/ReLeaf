@@ -88,15 +88,15 @@ console.log(campaignId, "OUTSIDE")
       <form >
     
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="profile_title" placeholder="Enter a title" onChange = {changeHandler} 
-        defaultValue="If you haven't seen Game of Thrones, go watch it right now"/>
+        <Form.Control type="text" name="profile_title" placeholder="Enter a title" as="input" onChange = {changeHandler} 
+        defaultValue="Forest fire destroyed my home"/>
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
-        defaultValue="Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor"/>
+        defaultValue="Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui"/>
         <Form.Label>Image</Form.Label>
         <Form.Control type="text" name="image" defaultValue="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" placeholder="Enter a Category" onChange = {changeHandler} />
         <Form.Label>Total Goal</Form.Label>
-        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" defaultValue="20000" onChange = {changeHandler} />
+        <Form.Control type="text" name ="total_goal" placeholder="Enter new Category" as="input" defaultValue="20000" onChange = {changeHandler} />
 
 
       </form>
