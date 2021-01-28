@@ -1,11 +1,10 @@
 .Bottom--Left--Container {
-  flex: 0 1 90%;
-            
-            max-width: 90%;
+  flex: 0 1 100%;
+            margin-left: 13em;
+            max-width: 100%;
             // border: 1px solid red;
             // background: #0BDA51;
             padding: .5em;
             align-items: center;
             overflow: scroll;
-
 }
