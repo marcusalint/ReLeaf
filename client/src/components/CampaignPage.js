@@ -6,7 +6,7 @@ import "./CampaignPage.scss";
 import axios from 'axios';
 import CampaignPageHead from './CampaignPageHead';
 import CampaignPageBottom from './CampaignPageBottom';
-import MainProgressBar from './MainProgressBar';
+
 
 
 export default function CampaignPage(props) {
@@ -123,11 +123,12 @@ export default function CampaignPage(props) {
       <BackToTop showBelow={250}/>
       {state.profile.length > 0 && state.products.length > 0 && state.users.length >0 &&
         <div>
-        <CampaignPageHead  users={state.users} profile={state.profile} goal={state.goal}/>
+        <CampaignPageHead  state={state} users={state.users} profile={state.profile} goal={state.goal}/>
+      
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} getRecentContributions={getRecentContributions}/>
         </div>
       }
-      <MainProgressBar percentage={getPercentage(props)}/>
+      
     </div>
   )
 }
