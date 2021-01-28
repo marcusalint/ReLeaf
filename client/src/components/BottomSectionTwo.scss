@@ -1,13 +1,13 @@
 .Bottom--Right--Container {
-  flex: 0 1 10%;
-  display: flex;
+  
+  display: block;
   height: 100%;
-  max-width: 10%;
-  flex-direction: column;
-  align-items: center;
+  max-width: 75%;
+  
+  // align-items: center;
   // margin-left: 4em;
-  
-  
+  // margin-top: 300px;
+
   
   
 }
@@ -24,4 +24,32 @@
 
   
   
+}
+
+.Card {
+  background-color: #EEE;
+  max-width: 400px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: row;
+  
+
+
+
+}
+
+.News--Text {
+  font-size: 10px;
+  
+}
+
+.News--Heading h1 {
+  font-size: 10px, !important;
+
+  
+}
+
+.News--Image {
+  max-height: 100px;
+  position: absolute;
 }
