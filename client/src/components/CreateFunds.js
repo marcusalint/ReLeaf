@@ -89,7 +89,7 @@ console.log(campaignId, "OUTSIDE")
     
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="profile_title" placeholder="Enter a title" as="input" onChange = {changeHandler} 
-        defaultValue="Forest fire destroyed my home" autoComplete='off'/>
+        defaultValue="Forest Fire Destroyed My Home" autoComplete='off'/>
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" name="profile_description" placeholder="Enter a Description" onChange = {changeHandler} as="textarea" rows={3} size="sm"
         defaultValue="Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui" autoComplete='off'/>
