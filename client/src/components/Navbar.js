@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color="default" style={{opacity: 0.7}}>
+      <AppBar position="fixed" color="800" style={{opacity: 0.7}}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <img src="/images/plant.png" className="logo"/>
