@@ -53,15 +53,15 @@ export default function FormProducts(props) {
  
  
     <Form.Label>Product fund title</Form.Label>
-    <Form.Control name="product_title" as="textarea" rows={1} onChange = {changeHandler} defaultValue="Medical and hospital bills"/>
+    <Form.Control name="product_title" as="textarea" rows={1} onChange = {changeHandler} defaultValue="Medical and hospital bills" autoComplete='off'/>
  
   
     <Form.Label>Product fund description</Form.Label>
-    <Form.Control name="description" as="textarea" rows={3}  onChange = {changeHandler} defaultValue="My cousin was injured and I need help covering for their medical expenses and physiotherpy during their recovery"/>
+    <Form.Control name="description" as="textarea" rows={3}  onChange = {changeHandler} defaultValue="My cousin was injured and I need help covering for their medical expenses and physiotherpy during their recovery" autoComplete='off'/>
  
   
   <Form.Label>Product Price</Form.Label>
-      <Form.Control name="price" type="text"  onChange = {changeHandler} defaultValue="2000" autocomplete="false"/>
+      <Form.Control name="price" type="text"  onChange = {changeHandler} defaultValue="2000" autoComplete='off'/>
   
 
   

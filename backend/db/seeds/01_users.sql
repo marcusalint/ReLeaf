@@ -13,7 +13,7 @@ VALUES
     'Bros', 
     'luigi@nintendo.com', 
     'test',
-    'Burnaby', 
+    'Toronto', 
     'Hey There!', 
     'contributer'
     ),
@@ -22,7 +22,7 @@ VALUES
         'Peach',
         'peach@nintendo.com',
         'test',
-        'Port Moody',
+        'Calgary',
         'I am hungry',
         'contributer'
     ),
@@ -31,8 +31,9 @@ VALUES
         'Daisy',
         'daisy@nintendo.com',
         'test',
-        'Surrey',
+        'Montreal',
         'hiiiiii',
         'creator'
     ),
-    ('Donkey', 'Kong', 'donkey@nintendo.com', 'test','Whistler','Helooo','contributer');
+    ('Donkey', 'Kong', 'donkey@nintendo.com', 'test','Winnipeg','Helooo','contributer'),
+    ('Ryan', 'Reynolds', 'ryan@reynolds.com', 'test','Ottawa','Helooo','contributer');

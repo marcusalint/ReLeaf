@@ -3,7 +3,7 @@
 } */
 .all-funds--items{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   flex-flow: wrap;
