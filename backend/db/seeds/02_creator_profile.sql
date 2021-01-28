@@ -30,4 +30,34 @@ VALUES
         false,
         3
         
+    ),
+     (
+        'Tsunami flooded our home and destroyed all of our belongings.',
+        'Just say anything, George, say what evers natural, the first thing that comes to your mind. Take that you mutated son-of-a-bitch. My pine, why you. You space bastard, you killed a pine. You do? Yeah, its 8:00. Hey, McFly, I thought I told you never to come in here. Well its gonna cost you. How much money you got on you?',
+        'https://images.unsplash.com/photo-1547683905-f686c993aae5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Zmxvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        40000,
+        80000,
+        false,
+        4
+        
+    ),
+     (
+        'Recent volcanic eruption covered everything in ash',
+        'Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.',
+        'https://images.unsplash.com/photo-1475776408506-9a5371e7a068?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dm9sY2Fub3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        15000,
+        60000,
+        false,
+        5
+        
+    ),
+     (
+        'A rogue asteroid crashed into my living room.',
+        'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.',
+        'https://images.unsplash.com/photo-1541971740285-c4b71c6f9899?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8ZGFtYWdlZCUyMGhvdXNlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+        9000,
+        10000,
+        false,
+        6
+        
     )
