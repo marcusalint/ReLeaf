@@ -85,9 +85,7 @@ export default function CampaignPage(props) {
     const percent = (state.amount_reached/state.goal)*100;
     return percent;
   }
-
-  const updateProduct = (productObj) => {
-
+  
   const updateProduct = (productObj) => {
     axios.post("http://localhost:3000/api/userProducts", {productObj} )
     .then(res => {
@@ -125,15 +123,10 @@ export default function CampaignPage(props) {
       {state.profile.length > 0 && state.products.length > 0 && state.users.length >0 &&
         <div>
         <CampaignPageHead  users={state.users} profile={state.profile} goal={state.goal}/>
+        <MainProgressBar percentage={getPercentage(props)}/>
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} getRecentContributions={getRecentContributions}/>
         </div>
       }
-      <MainProgressBar percentage={getPercentage(props)}/>
     </div>
   )
-}
-
-
-      {/* <BackToTop showBelow={250}/> */}
-      {/* <SidePanel  users={state.users} profile={state.profile} goal={state.goal}/> */}
-      {/* <Products products={state} updateProduct={updateProduct}/> */}
+ }
