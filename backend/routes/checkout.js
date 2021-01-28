@@ -8,7 +8,7 @@ const { v4: uuidV4 } = require('uuid');
 // Checkout Endpoint Gives Back Payment Token on Payment Success
 module.exports = (db) => {
   router.post("/", async (req, res) => {
-    console.log("Request:", req.body);
+    // console.log("Request:", req.body);
 
     let error;
     let status;
@@ -45,12 +45,12 @@ module.exports = (db) => {
           idempotencyKey
         }
       );
-      console.log("Charge:", { charge });
+      // console.log("Charge:", { charge });
       status = "success";
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
       status = "failure";
-      console.log(error)
+      // console.log(error)
     }
     
     res.json({ error, status });
