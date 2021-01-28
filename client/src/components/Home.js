@@ -76,7 +76,7 @@ export default function Home(props) {
 
         </div>
         <div className="section-image">
-          <img alt="" src="https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e201b8d109d5f5970c-800wi" />
+          {/* <img alt="" src="https://dontmesswithtaxes.typepad.com/.a/6a00d8345157c669e201b8d109d5f5970c-800wi" /> */}
           <button className="description-contribute">
             <span>Start your own campaign</span><em></em>
           </button>
