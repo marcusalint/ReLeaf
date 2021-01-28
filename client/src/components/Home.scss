@@ -206,6 +206,7 @@ h6{
   font-family:'Lucida Sans', Arial, sans-serif;
 }
 section.description{
+  width: 100%;
   display: flex;
   padding: 7% 15%;
 }
@@ -214,7 +215,7 @@ section.description{
   text-align: left;
 }
 .homepage {
-  // background-color: #000;
+  background-color:#DDEBE8;
   p{
     width:60%;
     text-align: left
@@ -234,10 +235,12 @@ button.description-contribute{
 }
 span.Font-icon{
   float: left;
+  width:15px;
+  height: 15px;
   padding: 3%;
-  margin-right: 3em;
+  margin-right: 7em;
 }
-div.content-wrap{
+.content-wrap{
   display: flex;
   align-items: space-between;
   align-content: space-between;
