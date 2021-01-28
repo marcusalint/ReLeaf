@@ -127,4 +127,6 @@ export default function CampaignPage(props) {
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} getRecentContributions={getRecentContributions}/>
         </div>
       }
-
+    </div>
+      )
+}   
