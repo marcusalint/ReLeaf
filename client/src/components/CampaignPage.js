@@ -123,11 +123,8 @@ export default function CampaignPage(props) {
       {state.profile.length > 0 && state.products.length > 0 && state.users.length >0 &&
         <div>
         <CampaignPageHead  state={state} users={state.users} profile={state.profile} goal={state.goal}/>
-      
+        
         <CampaignPageBottom products={state} updateProduct={updateProduct} users={state.users} profile={state.profile} goal={state.goal} getRecentContributions={getRecentContributions}/>
         </div>
       }
-      
-    </div>
-  )
- }
+
