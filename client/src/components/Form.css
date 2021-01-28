@@ -50,6 +50,7 @@
 	-webkit-appearance: menulist-button;
 	height:35px;
 }
+
 .form-style-5 .number {
 	background: #1abc9c;
 	color: #fff;
@@ -135,8 +136,12 @@
 .list-item{
 	border: 3px solid #1abc9c;
  max-width:419px;
+ padding:5px;
 	text-align: center;	
   margin-right: 10px;
 	list-style: none;
 	word-wrap: break-word;
+	background-color: #b2d8d0;
+	opacity: 0.5;
+	border-radius: 5px;
 }
