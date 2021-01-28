@@ -1,11 +1,27 @@
 .Bottom--Left--Container {
   flex: 0 1 90%;
-            
+            margin-left: 4em;
             max-width: 90%;
             // border: 1px solid red;
             // background: #0BDA51;
             padding: .5em;
             align-items: center;
-            overflow: scroll;
+            overflow: scroll
+}
+
+.Card {
+  background-color: #EEE;
+  max-width: 300px;
+  max-height: 200px;
+
+}
+
+.News--Text {
+  font-size: 10px;
+  
+}
+
+.News--Heading {
+  font-size: 10px;
 
 }
