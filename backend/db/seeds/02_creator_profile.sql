@@ -3,7 +3,7 @@ creator_profile(title, description, image, amount_raised, total_goal, total_goal
 VALUES
     (
         'Earthquake Destroyed My Home.',
-        'Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.',
+        'Our city was struck with earthquake and we need your help to get some funds for our friends and family. Please contribute whatever you can so that we can buy the supplies we need. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.',
         'https://images.pexels.com/photos/1667240/pexels-photo-1667240.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
         4000,
         10000,
