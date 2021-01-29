@@ -16,6 +16,7 @@ const HeadSectionOne = ({products, updateProduct, users, profile, goal, state}) 
       <img src="https://images.unsplash.com/photo-1567742940521-26d7040e1fd6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1600&q=80" className="Head--Image"></img>
   <h5 className="User--Location">{users[0].location}</h5>
     <div className="Icons">
+  <button className="Share--Button">Share</button>
        <InstagramIcon/>
        <TwitterIcon />
        <FacebookIcon />
