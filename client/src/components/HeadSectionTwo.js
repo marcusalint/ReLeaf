@@ -17,7 +17,7 @@ const HeadSectionTwo = ({products, updateProduct, users, profile, goal, state}) 
     <div className="Section--Two">
       <h1 className="Title">{profile[0].title}</h1>
       <p className="Description">{profile[0].description}</p>
-      <h2 className="Total--Raised">${state.amount_reached}.00 Raised of a ${goal}.00 Goal</h2>
+      <h2 className="Total--Raised">${state.amount_reached.toLocaleString()} Raised of a ${goal.toLocaleString()} Goal</h2>
       <MainProgressBar percentage={getPercentage()}/>
       
       <h2 className></h2>
