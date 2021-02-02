@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeadSectionTwo.scss'
-import MainProgressBar from './MainProgressBar';
+import MainProgressBar from './progressbar/MainProgressBar';
 
 
 
