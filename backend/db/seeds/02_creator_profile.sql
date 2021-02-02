@@ -32,7 +32,7 @@ VALUES
         
     ),
      (
-        'Tsunami Flooded Our Home and Destroyed All of Our Belongings.',
+        'Tsunami Flooded Home and Destroyed All of Our Belongings.',
         'Just say anything, George, say what evers natural, the first thing that comes to your mind. Take that you mutated son-of-a-bitch. My pine, why you. You space bastard, you killed a pine. You do? Yeah, its 8:00. Hey, McFly, I thought I told you never to come in here. Well its gonna cost you. How much money you got on you?',
         'https://images.unsplash.com/photo-1547683905-f686c993aae5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Zmxvb2R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
         40000,
