@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { TweenMax, Power2 } from "gsap";
-import ProgressBar from './progressbar/index'
+import ProgressBar from './progressbar/ProgressBar'
 import "./AllFundsListItem.css";
 
 export default function AllFundsListItem(props) {
