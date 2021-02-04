@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState, useEffect, useRef }  from "react";
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from "react";
 import SearchIcon from '@material-ui/icons/Search';
 import AllFundsListItem from './AllFundsListItem';
 import BackToTop from './BackToTop';
 import { TweenMax, Power2 } from 'gsap';
 import "./AllFundsList.css";
 const axios = require("axios").default;
+
 export default function AllFundsList(props) {
   const [users, setUsers] = useState([]);
   const [profiles, setProfile] = useState([]);
