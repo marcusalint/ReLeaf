@@ -68,7 +68,8 @@ export default function AllFundsList(props) {
             className="textfield" 
             id="outlined-basic"
             variant="outlined"
-            placeholder="Search by name or location" 
+            placeholder="Search by name or location"
+            autoComplete='off' 
             onChange={event => {setSearchTerm(event.target.value)}}>
             </input> 
           </span>
