@@ -6,6 +6,7 @@ import axios from 'axios';
 import {toast} from 'react-toastify';
 import ProgressBar from './progressbar/ProgressBar.js';
 import styled, { keyframes } from 'styled-components';
+import { getPercentageProducts } from '../helpers/helpers';
 
 
 
@@ -79,14 +80,6 @@ const Product = ({product, updateProduct, users, getRecentContributions}) => {
       {type: 'error'})
     }
   }
-  const getPercentage = function(props) {
-    const percent = (product.amount_reached/product.goal)*100;
-    return percent;
-  }
-
-  
-
-
 
   // console.log(token)
   // const getRecentContributions = function(props) {
@@ -122,7 +115,7 @@ const Product = ({product, updateProduct, users, getRecentContributions}) => {
       </div>
       </div>
       <div className="product--progress">
-              <ProgressBar percentage={getPercentage()}/>
+              <ProgressBar percentage={getPercentageProducts(product)}/>
               <span className="fund--goal">
                 <strong>${product.amount_reached.toLocaleString()} raised</strong> of ${product.goal.toLocaleString()} goal
               </span>
