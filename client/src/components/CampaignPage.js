@@ -6,6 +6,7 @@ import "./CampaignPage.scss";
 import axios from 'axios';
 import CampaignPageHead from './CampaignPageHead';
 import CampaignPageBottom from './CampaignPageBottom';
+import { getAmountReached, getGoal } from '../helpers/helpers'
 
 
 
@@ -35,7 +36,6 @@ export default function CampaignPage(props) {
     axios.get(`http://localhost:3000/api/userProducts/${id}`)
     .then((data) => {
       let products = data.data.user_products
-      // console.log(products)
      
       const temp = [...products]
       const goal = getGoal(temp);
@@ -66,25 +66,6 @@ export default function CampaignPage(props) {
     })
   },[]);
   console.log(state.contributions, 'state.contributions')
-
-  const getGoal = function(products) {
-    let totalGoal = 0;
-    for (const product of products) {
-      totalGoal += product.goal;
-    }
-    return totalGoal;
-  }
-  const getAmountReached = function(products) {
-    let totalAmountReached = 0;
-    for (const product of products) {
-      totalAmountReached += product.amount_reached;
-    }
-    return totalAmountReached;
-  }
-  const getPercentage = function(props) {
-    const percent = (state.amount_reached/state.goal)*100;
-    return percent;
-  }
   
   const updateProduct = (productObj) => {
     axios.post("http://localhost:3000/api/userProducts", {productObj} )
