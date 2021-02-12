@@ -21,4 +21,11 @@ const getPercentage = function(state) {
   return percent;
 }
 
-export { getGoal, getAmountReached, getPercentage }
+// Get the percentage for product progress bar
+const getPercentageProducts = function(props) {
+  console.log(props)
+  const percent = (props.amount_reached/props.goal)*100;
+  return percent;
+}
+
+export { getGoal, getAmountReached, getPercentage, getPercentageProducts }
