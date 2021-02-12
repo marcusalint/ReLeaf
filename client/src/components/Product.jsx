@@ -1,6 +1,5 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import {Card, CardMedia, CardContent, CardActions, Typography, IconButton} from "@material-ui/core";
-import { AddShoppingCart} from "@material-ui/icons";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import {toast} from 'react-toastify';
@@ -28,10 +27,6 @@ toast.configure();
 
 
 const Product = ({product, updateProduct, users, getRecentContributions}) => {
-
-  console.log(getRecentContributions, "PRODUCT.JSX")
-
-  // console.log(Object.keys(product), 'these are the prod obj keys')
 
   const price_per_donation = (product.goal/10)
   async function handleToken(token, addresses) {
