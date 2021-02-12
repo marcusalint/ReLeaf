@@ -23,7 +23,6 @@ const getPercentage = function(state) {
 
 // Get the percentage for product progress bar
 const getPercentageProducts = function(props) {
-  console.log(props)
   const percent = (props.amount_reached/props.goal)*100;
   return percent;
 }
