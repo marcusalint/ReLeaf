@@ -4,7 +4,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import ProgressBar from './progressbar/ProgressBar.js';
-import styled, { keyframes } from 'styled-components';
 import { getPercentageProducts } from '../helpers/helpers';
 
 
