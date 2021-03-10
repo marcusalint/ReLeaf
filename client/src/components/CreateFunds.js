@@ -3,9 +3,8 @@ import { Redirect } from 'react-router-dom'
 
 import FormProducts from './FormProducts';
 import axios from 'axios';
-import {Form} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import FormList from './FormList';
-import { Button } from 'react-bootstrap';
 import Modal from 'react-modal';
 import "./Form.css";
 
@@ -130,60 +129,3 @@ console.log(campaignId, "OUTSIDE")
     </div>
   )
 }
-
-  // const EMPTY = "EMPTY";
-  // const SHOW = "SHOW";
-  // const CREATE = "CREATE";
-  // const LIST = "LIST";
-  // const SAVING = 'SAVING';
-  // const DELETING = 'DELETING';
-  // const CONFIRM = 'CONFIRM';
-  // const EDIT = "EDIT";
-  // const ERROR_SAVING = "ERROR_SAVING";
-  // const ERROR_DELETING = "ERROR_DELETING";
-  
-  // const { mode, transition, back } = useVisualMode(
-  //   props.interview ? SHOW : EMPTY
-  // );
-  // return (
-  //   <div>
-  //     <FormComp/>
-  //     {state.products.map(item =>  {
-  //       return (
-  //         <div>
-  //           <p>{item.product_title}</p>
-  //           <p>{item.description}</p>
-  //           <p>{item.categories}</p>
-  //           <p>{item.price}</p>
-  //         </div>
-  //       )
-  //     })}
-
-  //     {/* <p>{state[1].product_title}{state[1].description}</p> */}
-  //     <Button onClick={(e) => setProductButton(true)}>Add Product</Button>
-  //     {productButton && <FormProducts onSave={save}/>}
-  //     {/* {mode === EMPTY && <Empty onAdd={() => transition('CREATE')} />} */}
-  //     {/* {mode === CREATE && <FormProducts onSave={save}/> } */}
-  //     {/* {mode === LIST && <FormList categories={state.categories}
-  //                                 product_title={state.product_title}
-  //                                 description={state.description}
-  //                                 price ={state.price}/> } */}
-  //   </div>
-
-  // )
-
-
-
-// const [error, setError] = useState("")
-// function validate() {
-//   if (name === "") {
-//     setError("Student name cannot be blank");
-//     return;
-//   }
-//   if (interviewer === null) {
-//     setError("You must choose an interviewer");
-//     return;
-//   }
-//   setError("");
-//   props.onSave(name, interviewer);
-// }
