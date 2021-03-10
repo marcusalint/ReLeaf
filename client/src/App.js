@@ -26,8 +26,6 @@ export default function App(props) {
       <Navbar/>
       <Switch>
         <Route path="/home" exact component={Home} />
-        <Route path="/random" exact component={Random} />
-        <Route path="/list" exact component={List} />
         <Route path="/all_funds" exact component={AllFundsList} />
         <Route path="/create_funds" exact component={CreateFunds} />
         <Route path="/campaign" exact component={CampaignPage} />
