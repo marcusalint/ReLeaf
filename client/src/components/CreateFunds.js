@@ -49,39 +49,23 @@ export default function CreateFundPage(props) {
   useEffect(() => {
     console.log('Do something after counter has changed', campaignId);
     if(campaignId > 0){
- setRedirect(true);
-    }
-   
- }, [campaignId]);
+    setRedirect(true);
+    }  
+  }, [campaignId]);
  
-   function handleSubmit(e) {
-     
-   e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
-  //  console.log(campaignId, "This is test");
-   
-  //  setProductButton(true, () => {console.log(productButton, "STATE OF PRODUCT BUTTON")});
-
-   axios
-     .post('http://localhost:3000/api/creatorProfileUpdate', {state})
-     .then(response => {
-      const id_value = response.data.rows[0].id;
-      // console.log(response.data.rows[0].id, "this is the id")
-      setCampaignId(id_value)
-      // console.log(campaignId, "INSIDE CAMPAIGN ID");
-      
-      //  if (redirect) {
-      //   return <Redirect to='/campaign' />;
-      // }
-     
-       
-     
-     })
-     .catch(error => {
-       console.log(error)
-     })
-console.log(campaignId, "OUTSIDE")
- }
+    axios
+      .post('http://localhost:3000/api/creatorProfileUpdate', {state})
+      .then(response => {
+        const id_value = response.data.rows[0].id;
+        setCampaignId(id_value)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
   return (
     <div className="form-style-5">
       <form >
